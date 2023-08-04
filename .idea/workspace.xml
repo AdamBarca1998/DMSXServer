@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="INIT COMMIT">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PropertiesParserSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/AppProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/PathParams.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/ResponseString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="IMPL upload file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/ParamsStruct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/BlockingHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +23,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -79,6 +75,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\barca\Desktop\DMSXServer\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="inet.dmsx.server.handlers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -114,7 +113,7 @@
       <workItem from="1690976822093" duration="2540000" />
       <workItem from="1690979709623" duration="1285000" />
       <workItem from="1691046109340" duration="19409000" />
-      <workItem from="1691136907199" duration="3421000" />
+      <workItem from="1691136907199" duration="6519000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690978608386</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="IMPL upload file">
+      <created>1691140970671</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691140970671</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +137,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="INIT COMMIT" />
-    <option name="LAST_COMMIT_MESSAGE" value="INIT COMMIT" />
+    <MESSAGE value="IMPL upload file" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPL upload file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

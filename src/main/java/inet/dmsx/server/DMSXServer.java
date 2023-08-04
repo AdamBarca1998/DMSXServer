@@ -2,6 +2,7 @@ package inet.dmsx.server;
 
 import inet.dmsx.server.enums.AppProperties;
 import inet.dmsx.server.enums.PathParams;
+import inet.dmsx.server.handlers.GetFileHandler;
 import inet.dmsx.server.handlers.RoutingHandlers;
 import inet.dmsx.server.handlers.UploadFileHandler;
 import io.undertow.Undertow;
@@ -19,6 +20,7 @@ public class DMSXServer {
     private final Undertow server;
 
     private static final HttpHandler ROUTES = new RoutingHandler()
+            .get(ROUTH_PATH, new GetFileHandler())
             .post(ROUTH_PATH, new UploadFileHandler())
             .setFallbackHandler(RoutingHandlers::notFoundHandler);
 
