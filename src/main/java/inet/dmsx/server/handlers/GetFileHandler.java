@@ -1,5 +1,6 @@
 package inet.dmsx.server.handlers;
 
+import inet.dmsx.server.Utils;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
 import org.apache.commons.io.IOUtils;
@@ -9,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.logging.Level;
 
 public class GetFileHandler extends BlockingHandler {
 
@@ -16,7 +18,7 @@ public class GetFileHandler extends BlockingHandler {
     public void handleRequest(HttpServerExchange exchange) throws IOException {
         if (blockExchange(exchange)) return;
 
-        var params = getParamsStruct(exchange);
+        var params = Utils.getParamsStruct(exchange);
         var file = new File(params.filePath());
 
         exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/octet-stream");
@@ -29,5 +31,7 @@ public class GetFileHandler extends BlockingHandler {
                 IOUtils.copyLarge(inputStream, targetStream);
             }
         }
+
+        log.log(Level.INFO, "Get file at " + params.filePath());
     }
 }

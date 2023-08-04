@@ -7,10 +7,10 @@ import io.undertow.util.StatusCodes;
 
 public class RoutingHandlers {
 
-    public static void allIsOk(HttpServerExchange exchange) {
+    public static void sendOkMessage(HttpServerExchange exchange, String msg) {
         exchange.setStatusCode(StatusCodes.OK);
         exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
-        exchange.getResponseSender().send(ResponseString.OK.getText());
+        exchange.getResponseSender().send(msg);
     }
 
     public static void somethingWrong(HttpServerExchange exchange) {
