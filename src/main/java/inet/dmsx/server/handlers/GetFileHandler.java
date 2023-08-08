@@ -25,7 +25,7 @@ public class GetFileHandler extends BlockingHandler {
         try (InputStream inputStream = new FileInputStream(file);
              OutputStream targetStream = exchange.getOutputStream()
         ) {
-            if (getSizeInMb(params.filePath()) < 2000) {
+            if (Utils.getSizeInMb(params.filePath()) < 2000) {
                 IOUtils.copy(inputStream, targetStream);
             } else {
                 IOUtils.copyLarge(inputStream, targetStream);
