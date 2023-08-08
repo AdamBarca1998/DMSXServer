@@ -13,12 +13,6 @@ public class RoutingHandlers {
         exchange.getResponseSender().send(msg);
     }
 
-    public static void somethingWrong(HttpServerExchange exchange) {
-        exchange.setStatusCode(StatusCodes.BAD_REQUEST);
-        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
-        exchange.getResponseSender().send(ResponseString.SOMETHING_WRONG.getText());
-    }
-
     public static void notFoundHandler(HttpServerExchange exchange) {
         exchange.setStatusCode(StatusCodes.NOT_FOUND);
         exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");

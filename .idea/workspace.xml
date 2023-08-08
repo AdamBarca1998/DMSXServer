@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="IMPL delete and info file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" afterDir="false" />
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="remove getSizeInMb() method to Utils">
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/ResponseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/ResponseString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +112,7 @@
       <workItem from="1691136907199" duration="6872000" />
       <workItem from="1691148231013" duration="5359000" />
       <workItem from="1691484247453" duration="1686000" />
-      <workItem from="1691486246199" duration="299000" />
+      <workItem from="1691486246199" duration="714000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -145,7 +142,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691153499094</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="IMPL checksum file">
+      <created>1691486717576</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691486717576</updated>
+    </task>
+    <task id="LOCAL-00006" summary="remove getSizeInMb() method to Utils">
+      <created>1691486882784</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1691486882784</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,23 +167,9 @@
     <MESSAGE value="IMPL upload file" />
     <MESSAGE value="IMPL get file" />
     <MESSAGE value="IMPL delete and info file" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPL delete and info file" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="IMPL checksum file" />
+    <MESSAGE value="remove getSizeInMb() method to Utils" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove getSizeInMb() method to Utils" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
