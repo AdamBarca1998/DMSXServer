@@ -1,6 +1,6 @@
 package inet.dmsx.server;
 
-import inet.dmsx.server.enums.AppProperties;
+import inet.dmsx.server.enums.DMSXServerProperties;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -28,11 +28,11 @@ public class PropertiesParserSingleton {
         return INSTANCE;
     }
 
-    public String getPropertyValue(AppProperties property) {
+    public String getPropertyValue(DMSXServerProperties property) {
         return appProps.getProperty(property.getText(), "");
     }
 
-    public int getPropertyValueInt(AppProperties property) {
+    public int getPropertyValueInt(DMSXServerProperties property) {
         return Integer.parseInt(appProps.getProperty(property.getText(), "0"));
     }
 }

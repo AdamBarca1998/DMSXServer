@@ -1,6 +1,6 @@
 package inet.dmsx.server;
 
-import inet.dmsx.server.enums.AppProperties;
+import inet.dmsx.server.enums.DMSXServerProperties;
 import inet.dmsx.server.enums.PathParams;
 import inet.dmsx.server.handlers.ChecksumFileHandler;
 import inet.dmsx.server.handlers.DeleteFileHandler;
@@ -25,8 +25,8 @@ public class DMSXServer {
             .delete(ROUTH_PATH, new DeleteFileHandler())
             .setFallbackHandler(RoutingHandlers::notFoundHandler);
 
-    public static final int PORT = PROPERTIES_PARSER.getPropertyValueInt(AppProperties.PORT);
-    public static final String HOST = PROPERTIES_PARSER.getPropertyValue(AppProperties.HOST);
+    public static final int PORT = PROPERTIES_PARSER.getPropertyValueInt(DMSXServerProperties.PORT);
+    public static final String HOST = PROPERTIES_PARSER.getPropertyValue(DMSXServerProperties.HOST);
 
     private final Undertow server;
 
