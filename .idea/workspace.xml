@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="DEL useless enum">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="REIMPL dir_part for storage ids">
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PropertiesParserSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PropertiesParserSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/AppProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/DMSXServerProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/DMSXServerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/DMSXServerProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/PathParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/PathParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/ResponseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/ResponseString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +89,7 @@
       <option name="PROGRAM_PARAMETERS" value="C:\Users\barca\Desktop\app.properties" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="inet.dmsx.server.enums.*" />
+          <option name="PATTERN" value="inet.dmsx.server.constants.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,7 +120,7 @@
       <workItem from="1691148231013" duration="5359000" />
       <workItem from="1691484247453" duration="1686000" />
       <workItem from="1691486246199" duration="2800000" />
-      <workItem from="1691572351869" duration="2194000" />
+      <workItem from="1691572351869" duration="2538000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -167,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691486995549</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="REIMPL dir_part for storage ids">
+      <created>1691577398331</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1691577398331</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +192,8 @@
     <MESSAGE value="IMPL checksum file" />
     <MESSAGE value="remove getSizeInMb() method to Utils" />
     <MESSAGE value="DEL useless enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="DEL useless enum" />
+    <MESSAGE value="REIMPL dir_part for storage ids" />
+    <option name="LAST_COMMIT_MESSAGE" value="REIMPL dir_part for storage ids" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

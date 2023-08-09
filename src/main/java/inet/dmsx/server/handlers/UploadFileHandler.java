@@ -1,7 +1,7 @@
 package inet.dmsx.server.handlers;
 
 import inet.dmsx.server.Utils;
-import inet.dmsx.server.enums.ResponseString;
+import inet.dmsx.server.constants.Response;
 import io.undertow.server.HttpServerExchange;
 import org.apache.commons.io.FileUtils;
 
@@ -22,6 +22,6 @@ public class UploadFileHandler extends BlockingHandler {
         FileUtils.copyInputStreamToFile(inputStream, targetFile);
 
         log.log(Level.INFO, "Create file at " + params.filePath());
-        RoutingHandlers.sendOkMessage(exchange, ResponseString.OK.getText());
+        RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
     }
 }

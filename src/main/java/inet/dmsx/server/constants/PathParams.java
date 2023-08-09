@@ -1,4 +1,4 @@
-package inet.dmsx.server.enums;
+package inet.dmsx.server.constants;
 
 public enum PathParams {
 

@@ -1,7 +1,7 @@
 package inet.dmsx.server;
 
-import inet.dmsx.server.enums.DMSXServerProperties;
-import inet.dmsx.server.enums.PathParams;
+import inet.dmsx.server.constants.DMSXServerProperties;
+import inet.dmsx.server.constants.PathParams;
 import io.undertow.server.HttpServerExchange;
 
 import java.io.IOException;
