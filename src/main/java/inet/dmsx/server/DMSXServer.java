@@ -6,6 +6,7 @@ import inet.dmsx.server.handlers.ChecksumFileHandler;
 import inet.dmsx.server.handlers.DeleteFileHandler;
 import inet.dmsx.server.handlers.GetFileHandler;
 import inet.dmsx.server.handlers.InfoFileHandler;
+import inet.dmsx.server.handlers.PingServerHandler;
 import inet.dmsx.server.handlers.RoutingHandlers;
 import inet.dmsx.server.handlers.UploadFileHandler;
 import io.undertow.Undertow;
@@ -18,6 +19,7 @@ public class DMSXServer {
     private static final String ROUTH_PATH = "/{" + PathParams.STORAGE_ID + "}/{" +
             PathParams.DIRECTORY + "}/{" + PathParams.FILE_NAME + "}";
     private static final HttpHandler ROUTES = new RoutingHandler()
+            .get("/ping", new PingServerHandler())
             .get(ROUTH_PATH + "/checksum", new ChecksumFileHandler())
             .get(ROUTH_PATH + "/info", new InfoFileHandler())
             .get(ROUTH_PATH, new GetFileHandler())

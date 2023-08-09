@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="REIMPL dir_part for storage ids">
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="ADD to Enum Response attr 'code'">
+      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PropertiesParserSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PropertiesParserSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/DMSXServerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/DMSXServerProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/PathParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/PathParams.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/enums/ResponseString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/ResponseString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +114,7 @@
       <workItem from="1691148231013" duration="5359000" />
       <workItem from="1691484247453" duration="1686000" />
       <workItem from="1691486246199" duration="2800000" />
-      <workItem from="1691572351869" duration="2538000" />
+      <workItem from="1691572351869" duration="3695000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -178,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691577398331</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ADD to Enum Response attr 'code'">
+      <created>1691577773201</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1691577773201</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +194,8 @@
     <MESSAGE value="remove getSizeInMb() method to Utils" />
     <MESSAGE value="DEL useless enum" />
     <MESSAGE value="REIMPL dir_part for storage ids" />
-    <option name="LAST_COMMIT_MESSAGE" value="REIMPL dir_part for storage ids" />
+    <MESSAGE value="ADD to Enum Response attr 'code'" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADD to Enum Response attr 'code'" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
