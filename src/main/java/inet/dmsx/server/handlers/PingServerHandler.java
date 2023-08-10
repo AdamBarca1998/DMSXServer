@@ -9,14 +9,14 @@ import java.util.logging.Logger;
 
 public class PingServerHandler implements HttpHandler {
 
-    private final Logger log = Logger.getLogger(PingServerHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(PingServerHandler.class.getName());
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {
         try {
-            log.log(Level.INFO, "START Ping server");
+            LOGGER.info("START Ping server");
             RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
-            log.log(Level.INFO, "END Ping server");
+            LOGGER.info("END Ping server");
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

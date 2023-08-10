@@ -19,7 +19,7 @@ public class GetFileHandler extends BlockingHandler {
             if (blockExchange(exchange)) return;
             var params = Utils.getParamsStruct(exchange);
 
-            log.log(Level.INFO, "START Get file at " + params.filePath());
+            LOGGER.info("START Get file at " + params.filePath());
 
             var file = new File(params.filePath());
 
@@ -34,7 +34,7 @@ public class GetFileHandler extends BlockingHandler {
                 }
             }
 
-            log.log(Level.INFO, "END Get file at " + params.filePath());
+            LOGGER.info("END Get file at " + params.filePath());
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

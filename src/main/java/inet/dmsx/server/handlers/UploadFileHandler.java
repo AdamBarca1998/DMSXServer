@@ -6,7 +6,6 @@ import io.undertow.server.HttpServerExchange;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.util.logging.Level;
 
 public class UploadFileHandler extends BlockingHandler {
 
@@ -16,7 +15,7 @@ public class UploadFileHandler extends BlockingHandler {
             if (blockExchange(exchange)) return;
             var params = Utils.getParamsStruct(exchange);
 
-            log.log(Level.INFO, "START Upload file at " + params.filePath());
+            LOGGER.info("START Upload file at " + params.filePath());
 
             var inputStream = exchange.getInputStream();
 
@@ -24,7 +23,7 @@ public class UploadFileHandler extends BlockingHandler {
             FileUtils.copyInputStreamToFile(inputStream, targetFile);
 
             RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
-            log.log(Level.INFO, "END Upload file at " + params.filePath());
+            LOGGER.info("END Upload file at " + params.filePath());
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

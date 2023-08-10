@@ -11,19 +11,19 @@ import java.util.logging.Logger;
 
 public class InfoFileHandler implements HttpHandler {
 
-    private final Logger log = Logger.getLogger(InfoFileHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(InfoFileHandler.class.getName());
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {
         try {
             var params = Utils.getParamsStruct(exchange);
 
-            log.log(Level.INFO, "START Info file at " + params.filePath());
+            LOGGER.info("START Info file at " + params.filePath());
 
             var size = Files.size(Paths.get(params.filePath())); // bytes
 
             RoutingHandlers.sendOkMessage(exchange, String.valueOf(size));
-            log.log(Level.INFO, "END Info file at " + params.filePath());
+            LOGGER.info("END Info file at " + params.filePath());
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

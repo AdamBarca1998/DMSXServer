@@ -13,14 +13,14 @@ import java.util.logging.Logger;
 
 public class ChecksumFileHandler implements HttpHandler {
 
-    private final Logger log = Logger.getLogger(ChecksumFileHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ChecksumFileHandler.class.getName());
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {
         try {
             var params = Utils.getParamsStruct(exchange);
 
-            log.log(Level.INFO, "START Checksum file at " + params.filePath());
+            LOGGER.info("START Checksum file at " + params.filePath());
 
             try (InputStream is = Files.newInputStream(Paths.get(params.filePath()))) {
                 String checksum = DigestUtils.md5Hex(is);
@@ -28,7 +28,7 @@ public class ChecksumFileHandler implements HttpHandler {
                 RoutingHandlers.sendOkMessage(exchange, checksum);
             }
 
-            log.log(Level.INFO, "END Checksum file at " + params.filePath());
+            LOGGER.info("END Checksum file at " + params.filePath());
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

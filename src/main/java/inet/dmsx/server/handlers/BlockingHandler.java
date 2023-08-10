@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public abstract class BlockingHandler implements HttpHandler {
 
-    protected final Logger log = Logger.getLogger(BlockingHandler.class.getName());
+    protected static final Logger LOGGER = Logger.getLogger(BlockingHandler.class.getName());
 
     protected boolean blockExchange(HttpServerExchange exchange) {
         if (exchange.isInIoThread()) {

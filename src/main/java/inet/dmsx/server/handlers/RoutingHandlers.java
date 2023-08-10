@@ -5,7 +5,12 @@ import inet.dmsx.server.constants.Response;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class RoutingHandlers {
+
+    private static final Logger LOGGER = Logger.getLogger(RoutingHandlers.class.getName());
 
     public static void sendOkMessage(HttpServerExchange exchange, String msg) {
         exchange.setStatusCode(Response.OK.getCode());
@@ -20,8 +25,12 @@ public class RoutingHandlers {
     }
 
     public static void exceptionHandler(HttpServerExchange exchange, Throwable e) {
+        String stackTrace = Utils.getStackTrace(e);
+
+        LOGGER.log(Level.WARNING, stackTrace);
+
         exchange.setStatusCode(Response.ERROR.getCode());
         exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
-        exchange.getResponseSender().send(Utils.getStackTrace(e));
+        exchange.getResponseSender().send(stackTrace);
     }
 }
