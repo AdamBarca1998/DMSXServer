@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="IMPL /ping">
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterScheduler.java" afterDir="false" />
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="IMPL schedule deleter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/DMSXServerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/DMSXServerProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/BlockingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/BlockingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/Response.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterJob.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +119,7 @@
       <workItem from="1691484247453" duration="1686000" />
       <workItem from="1691486246199" duration="2800000" />
       <workItem from="1691572351869" duration="4900000" />
-      <workItem from="1691657114464" duration="4799000" />
+      <workItem from="1691657114464" duration="6675000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -197,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691588224240</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="IMPL schedule deleter">
+      <created>1691663935382</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1691663935382</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +215,9 @@
     <MESSAGE value="REIMPL dir_part for storage ids" />
     <MESSAGE value="ADD to Enum Response attr 'code'" />
     <MESSAGE value="IMPL /ping" />
-    <option name="LAST_COMMIT_MESSAGE" value="IMPL /ping" />
+    <MESSAGE value="IMPL schedule deleters" />
+    <MESSAGE value="IMPL schedule deleter" />
+    <option name="LAST_COMMIT_MESSAGE" value="IMPL schedule deleter" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -24,7 +24,7 @@ public class DeleterJob implements Job {
         String dir = dataMap.getString("dir");
         int hours = dataMap.getInt("hours");
 
-        log.info("Start Delete " + dir + " every " + hours + " hours.");
+        log.info("START Delete " + dir + " every " + hours + " hours.");
 
         Instant cutoff = Instant.now().minus(Duration.ofHours(hours));
         Iterator<File> filesToDelete = FileUtils.iterateFiles(new File(dir), new AgeFileFilter(cutoff), TRUE);
@@ -37,6 +37,6 @@ public class DeleterJob implements Job {
             }
         });
 
-        log.info("End Delete " + dir + " every " + hours + " hours.");
+        log.info("END Delete " + dir + " every " + hours + " hours.");
     }
 }

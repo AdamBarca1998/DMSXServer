@@ -10,6 +10,7 @@ import inet.dmsx.server.handlers.PingServerHandler;
 import inet.dmsx.server.handlers.RoutingHandlers;
 import inet.dmsx.server.handlers.UploadFileHandler;
 import inet.dmsx.server.schedule.DeleterScheduler;
+import io.undertow.Handlers;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
@@ -28,6 +29,8 @@ public class DMSXServer {
             .post(ROUTH_PATH, new UploadFileHandler())
             .delete(ROUTH_PATH, new DeleteFileHandler())
             .setFallbackHandler(RoutingHandlers::notFoundHandler);
+    private static final HttpHandler ROOT = Handlers.exceptionHandler(ROUTES)
+            .addExceptionHandler(Throwable.class, RoutingHandlers::exceptionHandler);
 
     public static final int PORT = PROPERTIES_PARSER.getPropertyValueInt(DMSXServerProperties.PORT);
     public static final String HOST = PROPERTIES_PARSER.getPropertyValue(DMSXServerProperties.HOST);
@@ -37,7 +40,7 @@ public class DMSXServer {
 
     public DMSXServer() throws SchedulerException {
         server = Undertow.builder()
-                .addHttpListener(PORT, HOST, ROUTES)
+                .addHttpListener(PORT, HOST, ROOT)
                 .build();
     }
 

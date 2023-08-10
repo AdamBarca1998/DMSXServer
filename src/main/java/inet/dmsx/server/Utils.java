@@ -5,6 +5,8 @@ import inet.dmsx.server.constants.PathParams;
 import io.undertow.server.HttpServerExchange;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -24,5 +26,13 @@ public class Utils {
         var sizeBytes = Files.size(Paths.get(filePath));
 
         return sizeBytes / 1024 / 1024;
+    }
+
+    public static String getStackTrace(Throwable e) {
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        e.printStackTrace(pw);
+
+        return sw.toString();
     }
 }

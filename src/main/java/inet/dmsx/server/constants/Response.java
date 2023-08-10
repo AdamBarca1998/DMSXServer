@@ -4,6 +4,7 @@ import io.undertow.util.StatusCodes;
 
 public enum Response {
 
+    ERROR("Something wrong", StatusCodes.INTERNAL_SERVER_ERROR),
     PAGE_NOT_FOUND("Page Not Found", StatusCodes.NOT_FOUND),
     OK("OK", StatusCodes.OK);
 

@@ -20,12 +20,14 @@ public class ChecksumFileHandler implements HttpHandler {
     public void handleRequest(HttpServerExchange exchange) throws IOException {
         var params = Utils.getParamsStruct(exchange);
 
+        log.log(Level.INFO, "START Checksum file at " + params.filePath());
+
         try (InputStream is = Files.newInputStream(Paths.get(params.filePath()))) {
             String checksum = DigestUtils.md5Hex(is);
 
             RoutingHandlers.sendOkMessage(exchange, checksum);
         }
 
-        log.log(Level.INFO, "Checksum file at " + params.filePath());
+        log.log(Level.INFO, "END Checksum file at " + params.filePath());
     }
 }
