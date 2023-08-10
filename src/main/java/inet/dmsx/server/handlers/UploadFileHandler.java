@@ -6,24 +6,27 @@ import io.undertow.server.HttpServerExchange;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.logging.Level;
 
 public class UploadFileHandler extends BlockingHandler {
 
     @Override
-    public void handleRequest(HttpServerExchange exchange) throws IOException {
-        if (blockExchange(exchange)) return;
-        var params = Utils.getParamsStruct(exchange);
+    public void handleRequest(HttpServerExchange exchange) {
+        try {
+            if (blockExchange(exchange)) return;
+            var params = Utils.getParamsStruct(exchange);
 
-        log.log(Level.INFO, "START Upload file at " + params.filePath());
+            log.log(Level.INFO, "START Upload file at " + params.filePath());
 
-        var inputStream = exchange.getInputStream();
+            var inputStream = exchange.getInputStream();
 
-        File targetFile = new File(params.filePath());
-        FileUtils.copyInputStreamToFile(inputStream, targetFile);
+            File targetFile = new File(params.filePath());
+            FileUtils.copyInputStreamToFile(inputStream, targetFile);
 
-        RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
-        log.log(Level.INFO, "END Upload file at " + params.filePath());
+            RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+            log.log(Level.INFO, "END Upload file at " + params.filePath());
+        } catch (Exception e) {
+            RoutingHandlers.exceptionHandler(exchange, e);
+        }
     }
 }

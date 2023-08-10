@@ -5,7 +5,6 @@ import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import org.apache.commons.codec.digest.DigestUtils;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -17,17 +16,21 @@ public class ChecksumFileHandler implements HttpHandler {
     private final Logger log = Logger.getLogger(ChecksumFileHandler.class.getName());
 
     @Override
-    public void handleRequest(HttpServerExchange exchange) throws IOException {
-        var params = Utils.getParamsStruct(exchange);
+    public void handleRequest(HttpServerExchange exchange) {
+        try {
+            var params = Utils.getParamsStruct(exchange);
 
-        log.log(Level.INFO, "START Checksum file at " + params.filePath());
+            log.log(Level.INFO, "START Checksum file at " + params.filePath());
 
-        try (InputStream is = Files.newInputStream(Paths.get(params.filePath()))) {
-            String checksum = DigestUtils.md5Hex(is);
+            try (InputStream is = Files.newInputStream(Paths.get(params.filePath()))) {
+                String checksum = DigestUtils.md5Hex(is);
 
-            RoutingHandlers.sendOkMessage(exchange, checksum);
+                RoutingHandlers.sendOkMessage(exchange, checksum);
+            }
+
+            log.log(Level.INFO, "END Checksum file at " + params.filePath());
+        } catch (Exception e) {
+            RoutingHandlers.exceptionHandler(exchange, e);
         }
-
-        log.log(Level.INFO, "END Checksum file at " + params.filePath());
     }
 }

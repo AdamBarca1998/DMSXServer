@@ -13,8 +13,12 @@ public class PingServerHandler implements HttpHandler {
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {
-        log.log(Level.INFO, "START Ping server");
-        RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
-        log.log(Level.INFO, "END Ping server");
+        try {
+            log.log(Level.INFO, "START Ping server");
+            RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+            log.log(Level.INFO, "END Ping server");
+        } catch (Exception e) {
+            RoutingHandlers.exceptionHandler(exchange, e);
+        }
     }
 }
