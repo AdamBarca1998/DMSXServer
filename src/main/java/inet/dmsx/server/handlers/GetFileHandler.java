@@ -17,8 +17,10 @@ public class GetFileHandler extends BlockingHandler {
     @Override
     public void handleRequest(HttpServerExchange exchange) throws IOException {
         if (blockExchange(exchange)) return;
-
         var params = Utils.getParamsStruct(exchange);
+
+        log.log(Level.INFO, "START Get file at " + params.filePath());
+
         var file = new File(params.filePath());
 
         exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/octet-stream");
@@ -32,6 +34,6 @@ public class GetFileHandler extends BlockingHandler {
             }
         }
 
-        log.log(Level.INFO, "Get file at " + params.filePath());
+        log.log(Level.INFO, "END Get file at " + params.filePath());
     }
 }

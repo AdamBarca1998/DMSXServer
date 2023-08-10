@@ -17,9 +17,12 @@ public class InfoFileHandler implements HttpHandler {
     @Override
     public void handleRequest(HttpServerExchange exchange) throws IOException {
         var params = Utils.getParamsStruct(exchange);
+
+        log.log(Level.INFO, "START Info file at " + params.filePath());
+
         var size = Files.size(Paths.get(params.filePath())); // bytes
 
-        log.log(Level.INFO, "Info file at " + params.filePath());
         RoutingHandlers.sendOkMessage(exchange, String.valueOf(size));
+        log.log(Level.INFO, "END Info file at " + params.filePath());
     }
 }

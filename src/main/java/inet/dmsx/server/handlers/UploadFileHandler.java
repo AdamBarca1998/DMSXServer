@@ -14,14 +14,16 @@ public class UploadFileHandler extends BlockingHandler {
     @Override
     public void handleRequest(HttpServerExchange exchange) throws IOException {
         if (blockExchange(exchange)) return;
-
         var params = Utils.getParamsStruct(exchange);
+
+        log.log(Level.INFO, "START Upload file at " + params.filePath());
+
         var inputStream = exchange.getInputStream();
 
         File targetFile = new File(params.filePath());
         FileUtils.copyInputStreamToFile(inputStream, targetFile);
 
-        log.log(Level.INFO, "Upload file at " + params.filePath());
         RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+        log.log(Level.INFO, "END Upload file at " + params.filePath());
     }
 }

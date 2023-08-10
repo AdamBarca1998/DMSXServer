@@ -19,11 +19,13 @@ public class DeleteFileHandler implements HttpHandler {
     public void handleRequest(HttpServerExchange exchange) throws IOException {
         var params = Utils.getParamsStruct(exchange);
 
+        log.log(Level.INFO, "START Delete file at " + params.filePath());
+
         FileUtils.touch(new File(params.filePath()));
         File fileToDelete = FileUtils.getFile(params.filePath());
         FileUtils.deleteQuietly(fileToDelete);
 
-        log.log(Level.INFO, "Delete file at " + params.filePath());
         RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+        log.log(Level.INFO, "END Delete file at " + params.filePath());
     }
 }
