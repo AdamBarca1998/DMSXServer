@@ -9,7 +9,9 @@ public enum DMSXServerProperties {
     PORT("port"),
     MNT_DIR_PATH("mnt.dir_path"),
     TMP_DIR_PATH("tmp.dir_path"),
-    EMAIL_DIR_PATH("email.dir_path")
+    EMAIL_DIR_PATH("email.dir_path"),
+    TMP_DELETE_OLDER_HRS("tmp.delete_older_hrs"),
+    EMAIL_DELETE_OLDER_HRS("email.delete_older_hrs")
     ;
 
     DMSXServerProperties(String text) {
@@ -30,7 +32,7 @@ public enum DMSXServerProperties {
         return text;
     }
 
-    public static DMSXServerProperties valueOfStorageId(String storageId) {
+    public static DMSXServerProperties getDirPathOfStorageId(String storageId) {
         return BY_TEXT.get(storageId + ".dir_path");
     }
 }

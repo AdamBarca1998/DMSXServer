@@ -14,7 +14,7 @@ public class Utils {
         var storageId = exchange.getQueryParameters().get(PathParams.STORAGE_ID.name()).getFirst();
         var directory = exchange.getQueryParameters().get(PathParams.DIRECTORY.name()).getFirst();
         var fileName = exchange.getQueryParameters().get(PathParams.FILE_NAME.name()).getFirst();
-        var dirPath = PropertiesParserSingleton.getInstance().getPropertyValue(DMSXServerProperties.valueOfStorageId(storageId));
+        var dirPath = PropertiesParserSingleton.getInstance().getPropertyValue(DMSXServerProperties.getDirPathOfStorageId(storageId));
         var filePath = dirPath + "\\" + directory + "\\" + fileName;
 
         return new ParamsStruct(storageId, directory, fileName, filePath);

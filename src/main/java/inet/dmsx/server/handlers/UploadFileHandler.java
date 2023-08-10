@@ -21,7 +21,7 @@ public class UploadFileHandler extends BlockingHandler {
         File targetFile = new File(params.filePath());
         FileUtils.copyInputStreamToFile(inputStream, targetFile);
 
-        log.log(Level.INFO, "Create file at " + params.filePath());
+        log.log(Level.INFO, "Upload file at " + params.filePath());
         RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
     }
 }

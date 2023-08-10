@@ -1,10 +1,12 @@
 package inet.dmsx.server;
 
+import org.quartz.SchedulerException;
+
 public class Main {
 
     public static String CONFIG_PATH;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SchedulerException {
         if (args.length != 1) {
             throw new IllegalArgumentException("Missing configuration path argument!");
         }

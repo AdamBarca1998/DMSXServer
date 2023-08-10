@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class PingServerHandler implements HttpHandler {
 
-    private final Logger log = Logger.getLogger(UploadFileHandler.class.getName());
+    private final Logger log = Logger.getLogger(PingServerHandler.class.getName());
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {

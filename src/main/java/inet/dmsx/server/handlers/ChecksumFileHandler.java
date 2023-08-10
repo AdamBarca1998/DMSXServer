@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 public class ChecksumFileHandler implements HttpHandler {
 
-    private final Logger log = Logger.getLogger(UploadFileHandler.class.getName());
+    private final Logger log = Logger.getLogger(ChecksumFileHandler.class.getName());
 
     @Override
     public void handleRequest(HttpServerExchange exchange) throws IOException {

@@ -9,9 +9,11 @@ import inet.dmsx.server.handlers.InfoFileHandler;
 import inet.dmsx.server.handlers.PingServerHandler;
 import inet.dmsx.server.handlers.RoutingHandlers;
 import inet.dmsx.server.handlers.UploadFileHandler;
+import inet.dmsx.server.schedule.DeleterScheduler;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
+import org.quartz.SchedulerException;
 
 public class DMSXServer {
 
@@ -31,14 +33,16 @@ public class DMSXServer {
     public static final String HOST = PROPERTIES_PARSER.getPropertyValue(DMSXServerProperties.HOST);
 
     private final Undertow server;
+    private final DeleterScheduler deleterScheduler = new DeleterScheduler();
 
-    public DMSXServer() {
+    public DMSXServer() throws SchedulerException {
         server = Undertow.builder()
                 .addHttpListener(PORT, HOST, ROUTES)
                 .build();
     }
 
-    public void start() {
+    public void start() throws SchedulerException {
         server.start();
+        deleterScheduler.start();
     }
 }
