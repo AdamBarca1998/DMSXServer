@@ -11,7 +11,8 @@ public enum DMSXServerProperties {
     TMP_DIR_PATH("tmp.dir_path"),
     EMAIL_DIR_PATH("email.dir_path"),
     TMP_DELETE_OLDER_HRS("tmp.delete_older_hrs"),
-    EMAIL_DELETE_OLDER_HRS("email.delete_older_hrs")
+    EMAIL_DELETE_OLDER_HRS("email.delete_older_hrs"),
+    LOG_FILE_PATH("log.file_path")
     ;
 
     DMSXServerProperties(String text) {

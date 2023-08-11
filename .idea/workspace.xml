@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="REIPML exception handler">
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="REIPML Logger to static">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/BlockingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/BlockingHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/DMSXServerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/DMSXServerProperties.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +80,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="inet.dmsx.server.Main" />
       <module name="DMSXServer" />
-      <option name="PROGRAM_PARAMETERS" value="C:\Users\barca\Desktop\app.properties" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\barca\Desktop\javafile\app.properties" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="inet.dmsx.server.constants.*" />
@@ -121,7 +115,8 @@
       <workItem from="1691484247453" duration="1686000" />
       <workItem from="1691486246199" duration="2800000" />
       <workItem from="1691572351869" duration="4900000" />
-      <workItem from="1691657114464" duration="10243000" />
+      <workItem from="1691657114464" duration="11539000" />
+      <workItem from="1691742457785" duration="3389000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -221,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691668698100</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="REIPML Logger to static">
+      <created>1691669267127</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1691669267127</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +245,19 @@
     <MESSAGE value="IMPL exception handler" />
     <MESSAGE value="REIPML logs" />
     <MESSAGE value="REIPML exception handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="REIPML exception handler" />
+    <MESSAGE value="REIPML Logger to static" />
+    <option name="LAST_COMMIT_MESSAGE" value="REIPML Logger to static" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
