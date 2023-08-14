@@ -4,21 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="ADD final to classes">
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="REPLACE commons-io lib">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PropertiesParserSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PropertiesParserSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterJob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterScheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +118,7 @@
       <workItem from="1691572351869" duration="4900000" />
       <workItem from="1691657114464" duration="11539000" />
       <workItem from="1691742457785" duration="8051000" />
-      <workItem from="1692002817908" duration="4620000" />
+      <workItem from="1692002817908" duration="5750000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -249,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692004520693</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="REPLACE commons-io lib">
+      <created>1692007851738</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1692007851738</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +271,8 @@
     <MESSAGE value="REIPML Logger to static" />
     <MESSAGE value="IMPL logs to file" />
     <MESSAGE value="ADD final to classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADD final to classes" />
+    <MESSAGE value="REPLACE commons-io lib" />
+    <option name="LAST_COMMIT_MESSAGE" value="REPLACE commons-io lib" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -11,6 +11,8 @@ import java.io.FileInputStream;
 
 public final class GetFileHandler extends BlockingHandler {
 
+    private static final int STREAM_BUFFER_LENGTH = 4096;
+
     @Override
     public void handleRequest(HttpServerExchange exchange) {
         try {
@@ -22,8 +24,8 @@ public final class GetFileHandler extends BlockingHandler {
             var file = new File(params.filePath());
 
             exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/octet-stream");
-            try (BufferedOutputStream targetStream = new BufferedOutputStream(exchange.getOutputStream(), 4096);
-                 BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file), 4096)
+            try (BufferedOutputStream targetStream = new BufferedOutputStream(exchange.getOutputStream(), STREAM_BUFFER_LENGTH);
+                 BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file), STREAM_BUFFER_LENGTH)
             ) {
                 bufferedInputStream.transferTo(targetStream);
             }
