@@ -7,10 +7,10 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.logging.Logger;
 
-final public class ChecksumFileHandler implements HttpHandler {
+public final class ChecksumFileHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(ChecksumFileHandler.class.getName());
 
@@ -21,7 +21,7 @@ final public class ChecksumFileHandler implements HttpHandler {
 
             LOGGER.info("START Checksum file at " + params.filePath());
 
-            try (InputStream is = Files.newInputStream(Paths.get(params.filePath()))) {
+            try (InputStream is = Files.newInputStream(Path.of(params.filePath()))) {
                 String checksum = DigestUtils.md5Hex(is);
 
                 RoutingHandlers.sendOkMessage(exchange, checksum);

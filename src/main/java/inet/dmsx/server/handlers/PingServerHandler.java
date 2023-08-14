@@ -6,7 +6,7 @@ import io.undertow.server.HttpServerExchange;
 
 import java.util.logging.Logger;
 
-final public class PingServerHandler implements HttpHandler {
+public final class PingServerHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(PingServerHandler.class.getName());
 

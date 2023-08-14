@@ -8,7 +8,7 @@ import io.undertow.util.Headers;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-final public class RoutingHandlers {
+public final class RoutingHandlers {
 
     private static final Logger LOGGER = Logger.getLogger(RoutingHandlers.class.getName());
 

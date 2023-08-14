@@ -12,7 +12,7 @@ import org.quartz.impl.StdSchedulerFactory;
 
 import static org.quartz.JobBuilder.newJob;
 
-final public class DeleterScheduler {
+public final class DeleterScheduler {
 
     private static final PropertiesParserSingleton PROPERTIES_PARSER = PropertiesParserSingleton.getInstance();
 

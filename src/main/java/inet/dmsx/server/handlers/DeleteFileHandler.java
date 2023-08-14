@@ -4,12 +4,13 @@ import inet.dmsx.server.Utils;
 import inet.dmsx.server.constants.Response;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.logging.Logger;
 
-final public class DeleteFileHandler implements HttpHandler {
+public final class DeleteFileHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(DeleteFileHandler.class.getName());
 
@@ -20,9 +21,8 @@ final public class DeleteFileHandler implements HttpHandler {
 
             LOGGER.info("START Delete file at " + params.filePath());
 
-            FileUtils.touch(new File(params.filePath()));
-            File fileToDelete = FileUtils.getFile(params.filePath());
-            FileUtils.deleteQuietly(fileToDelete);
+            Path fileToDeletePath = Paths.get(params.filePath());
+            Files.deleteIfExists(fileToDeletePath);
 
             RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
             LOGGER.info("END Delete file at " + params.filePath());

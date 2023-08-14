@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 
-final public class Utils {
+public final class Utils {
 
     public static ParamsStruct getParamsStruct(HttpServerExchange exchange) {
         var storageId = exchange.getQueryParameters().get(PathParams.STORAGE_ID.name()).getFirst();
@@ -23,7 +23,7 @@ final public class Utils {
     }
 
     public static long getSizeInMb(String filePath) throws IOException {
-        var sizeBytes = Files.size(Paths.get(filePath));
+        var sizeBytes = Files.size(Path.of(filePath));
 
         return sizeBytes / 1024 / 1024;
     }

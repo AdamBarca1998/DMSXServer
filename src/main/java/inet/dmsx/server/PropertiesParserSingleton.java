@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-final public class PropertiesParserSingleton {
+public final class PropertiesParserSingleton {
 
     private static PropertiesParserSingleton INSTANCE;
 

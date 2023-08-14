@@ -5,10 +5,10 @@ import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.util.logging.Logger;
 
-final public class InfoFileHandler implements HttpHandler {
+public final class InfoFileHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(InfoFileHandler.class.getName());
 
@@ -19,7 +19,7 @@ final public class InfoFileHandler implements HttpHandler {
 
             LOGGER.info("START Info file at " + params.filePath());
 
-            var size = Files.size(Paths.get(params.filePath())); // bytes
+            var size = Files.size(Path.of(params.filePath())); // bytes
 
             RoutingHandlers.sendOkMessage(exchange, String.valueOf(size));
             LOGGER.info("END Info file at " + params.filePath());

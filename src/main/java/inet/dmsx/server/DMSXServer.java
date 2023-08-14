@@ -15,7 +15,7 @@ import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
 import org.quartz.SchedulerException;
 
-final public class DMSXServer {
+public final class DMSXServer {
 
     private static final PropertiesParserSingleton PROPERTIES_PARSER = PropertiesParserSingleton.getInstance();
     private static final String ROUTH_PATH = "/{" + PathParams.STORAGE_ID + "}/{" +
