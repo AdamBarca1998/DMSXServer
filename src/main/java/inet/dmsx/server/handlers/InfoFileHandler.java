@@ -6,10 +6,9 @@ import io.undertow.server.HttpServerExchange;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class InfoFileHandler implements HttpHandler {
+final public class InfoFileHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(InfoFileHandler.class.getName());
 

@@ -9,7 +9,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.util.logging.Logger;
 
-public class DeleteFileHandler implements HttpHandler {
+final public class DeleteFileHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(DeleteFileHandler.class.getName());
 

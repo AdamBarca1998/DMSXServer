@@ -10,7 +10,7 @@ import java.io.StringWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Utils {
+final public class Utils {
 
     public static ParamsStruct getParamsStruct(HttpServerExchange exchange) {
         var storageId = exchange.getQueryParameters().get(PathParams.STORAGE_ID.name()).getFirst();

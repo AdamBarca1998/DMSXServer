@@ -9,9 +9,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.logging.Level;
 
-public class GetFileHandler extends BlockingHandler {
+final public class GetFileHandler extends BlockingHandler {
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {

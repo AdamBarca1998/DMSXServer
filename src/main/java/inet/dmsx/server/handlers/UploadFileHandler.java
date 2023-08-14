@@ -7,7 +7,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 
-public class UploadFileHandler extends BlockingHandler {
+final public class UploadFileHandler extends BlockingHandler {
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {

@@ -8,10 +8,9 @@ import org.apache.commons.codec.digest.DigestUtils;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ChecksumFileHandler implements HttpHandler {
+final public class ChecksumFileHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(ChecksumFileHandler.class.getName());
 

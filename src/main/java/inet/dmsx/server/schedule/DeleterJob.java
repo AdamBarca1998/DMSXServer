@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 import static org.apache.commons.io.filefilter.TrueFileFilter.TRUE;
 
-public class DeleterJob implements Job {
+final public class DeleterJob implements Job {
 
     private static final Logger LOGGER = Logger.getLogger(DeleterJob.class.getName());
 

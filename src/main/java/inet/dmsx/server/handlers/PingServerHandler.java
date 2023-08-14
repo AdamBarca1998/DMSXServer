@@ -4,10 +4,9 @@ import inet.dmsx.server.constants.Response;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class PingServerHandler implements HttpHandler {
+final public class PingServerHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(PingServerHandler.class.getName());
 
