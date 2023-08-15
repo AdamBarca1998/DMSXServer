@@ -1,24 +1,24 @@
 package inet.dmsx.server.handlers;
 
 import inet.dmsx.server.DMSXServer;
-import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
 import java.util.logging.Logger;
 
-public abstract class Handler implements HttpHandler {
+public abstract class ManagementHandler implements HttpHandler {
 
-    protected static final Logger LOGGER = Logger.getLogger(Handler.class.getName());
+    protected static final Logger LOGGER = Logger.getLogger(ManagementHandler.class.getName());
     protected static final int STREAM_BUFFER_LENGTH = 4096;
 
     private final DMSXServer server;
 
-    public Handler(DMSXServer server) {
+    public ManagementHandler(DMSXServer server) {
         this.server = server;
     }
 
-    protected void managementRequest() throws IllegalStateServerException {
+    @Override
+    public void handleRequest(HttpServerExchange httpServerExchange) throws Exception {
         server.getState().handleRequest();
     }
 

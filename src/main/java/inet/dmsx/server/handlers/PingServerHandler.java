@@ -5,7 +5,7 @@ import inet.dmsx.server.constants.Response;
 import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
 
-public final class PingServerHandler extends Handler {
+public final class PingServerHandler extends ManagementHandler {
 
     public PingServerHandler(DMSXServer server) {
         super(server);
@@ -15,7 +15,7 @@ public final class PingServerHandler extends Handler {
     public void handleRequest(HttpServerExchange exchange) {
         try {
             LOGGER.info("START Ping server");
-            managementRequest();
+            super.handleRequest(exchange);
             RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
             LOGGER.info("END Ping server");
         } catch (IllegalStateServerException e) {

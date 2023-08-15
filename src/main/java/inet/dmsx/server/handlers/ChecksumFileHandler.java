@@ -12,7 +12,7 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.util.HexFormat;
 
-public final class ChecksumFileHandler extends Handler {
+public final class ChecksumFileHandler extends ManagementHandler {
 
     private static final String MD5 = "MD5";
 
@@ -26,7 +26,7 @@ public final class ChecksumFileHandler extends Handler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Checksum file at " + params.filePath());
-            managementRequest();
+            super.handleRequest(exchange);
 
             MessageDigest md = MessageDigest.getInstance(MD5);
             try (var is = new BufferedInputStream(Files.newInputStream(Paths.get(params.filePath())), STREAM_BUFFER_LENGTH);

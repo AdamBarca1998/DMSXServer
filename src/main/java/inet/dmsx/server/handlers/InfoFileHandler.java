@@ -8,7 +8,7 @@ import io.undertow.server.HttpServerExchange;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class InfoFileHandler extends Handler {
+public final class InfoFileHandler extends ManagementHandler {
 
     public InfoFileHandler(DMSXServer server) {
         super(server);
@@ -20,7 +20,7 @@ public final class InfoFileHandler extends Handler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Info file at " + params.filePath());
-            managementRequest();
+            super.handleRequest(exchange);
 
             var size = Files.size(Path.of(params.filePath())); // bytes
 

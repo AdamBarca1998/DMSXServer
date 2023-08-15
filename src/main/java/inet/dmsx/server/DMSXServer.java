@@ -10,6 +10,7 @@ import inet.dmsx.server.handlers.PauseServerHandler;
 import inet.dmsx.server.handlers.PingServerHandler;
 import inet.dmsx.server.handlers.ResumeServerHandler;
 import inet.dmsx.server.handlers.RoutingHandlers;
+import inet.dmsx.server.handlers.ShutdownServerHandler;
 import inet.dmsx.server.handlers.UploadFileHandler;
 import inet.dmsx.server.schedule.DeleterScheduler;
 import inet.dmsx.server.state.RunState;
@@ -34,15 +35,18 @@ public final class DMSXServer {
 
     public DMSXServer() throws SchedulerException {
         HttpHandler routes = new RoutingHandler()
+                // management
                 .put("/management/pause", new PauseServerHandler(this))
                 .put("/management/resume", new ResumeServerHandler(this))
-
-                .get("/ping", new PingServerHandler(this))
+                .put("/management/shutdown", new ShutdownServerHandler())
+                // files
                 .get(ROUTH_PATH + "/checksum", new ChecksumFileHandler(this))
                 .get(ROUTH_PATH + "/info", new InfoFileHandler(this))
                 .get(ROUTH_PATH, new GetFileHandler(this))
                 .post(ROUTH_PATH, new UploadFileHandler(this))
                 .delete(ROUTH_PATH, new DeleteFileHandler(this))
+                // server
+                .get("/ping", new PingServerHandler(this))
                 .setFallbackHandler(RoutingHandlers::notFoundHandler);
 
         server = Undertow.builder()

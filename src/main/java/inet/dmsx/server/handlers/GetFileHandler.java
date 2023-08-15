@@ -11,7 +11,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
-public final class GetFileHandler extends Handler {
+public final class GetFileHandler extends ManagementHandler {
 
     public GetFileHandler(DMSXServer server) {
         super(server);
@@ -24,7 +24,7 @@ public final class GetFileHandler extends Handler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Get file at " + params.filePath());
-            managementRequest();
+            super.handleRequest(exchange);
 
             var file = new File(params.filePath());
 

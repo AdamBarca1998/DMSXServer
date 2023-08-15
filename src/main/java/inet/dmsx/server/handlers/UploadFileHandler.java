@@ -11,7 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-public final class UploadFileHandler extends Handler {
+public final class UploadFileHandler extends ManagementHandler {
 
     public UploadFileHandler(DMSXServer server) {
         super(server);
@@ -24,7 +24,7 @@ public final class UploadFileHandler extends Handler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Upload file at " + params.filePath());
-            managementRequest();
+            super.handleRequest(exchange);
 
             var inputStream = exchange.getInputStream();
 

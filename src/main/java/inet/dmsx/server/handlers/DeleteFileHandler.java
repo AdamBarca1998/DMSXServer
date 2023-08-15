@@ -10,7 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public final class DeleteFileHandler extends Handler {
+public final class DeleteFileHandler extends ManagementHandler {
 
     public DeleteFileHandler(DMSXServer server) {
         super(server);
@@ -22,7 +22,7 @@ public final class DeleteFileHandler extends Handler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Delete file at " + params.filePath());
-            managementRequest();
+            super.handleRequest(exchange);
 
             Path fileToDeletePath = Paths.get(params.filePath());
             Files.deleteIfExists(fileToDeletePath);

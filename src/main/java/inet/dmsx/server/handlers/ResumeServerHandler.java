@@ -3,14 +3,18 @@ package inet.dmsx.server.handlers;
 import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.constants.Response;
 import inet.dmsx.server.state.RunState;
+import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
-public final class ResumeServerHandler extends Handler {
+import java.util.logging.Logger;
+
+public final class ResumeServerHandler implements HttpHandler {
+
+    private static final Logger LOGGER = Logger.getLogger(ResumeServerHandler.class.getName());
 
     private final DMSXServer server;
 
     public ResumeServerHandler(DMSXServer server) {
-        super(server);
         this.server = server;
     }
 
