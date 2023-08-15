@@ -2,24 +2,25 @@ package inet.dmsx.server.handlers;
 
 import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.constants.Response;
-import inet.dmsx.server.state.IllegalStateServerException;
+import inet.dmsx.server.state.PauseState;
 import io.undertow.server.HttpServerExchange;
 
-public final class PingServerHandler extends Handler {
+public final class PauseServerHandler extends Handler {
 
-    public PingServerHandler(DMSXServer server) {
+    private final DMSXServer server;
+
+    public PauseServerHandler(DMSXServer server) {
         super(server);
+        this.server = server;
     }
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {
         try {
-            LOGGER.info("START Ping server");
-            managementRequest();
+            LOGGER.info("START Pause server");
+            server.setState(new PauseState());
             RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
-            LOGGER.info("END Ping server");
-        } catch (IllegalStateServerException e) {
-            RoutingHandlers.illegalStateServerHandler(exchange, e);
+            LOGGER.info("END Pause server");
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

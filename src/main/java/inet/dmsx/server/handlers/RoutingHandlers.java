@@ -33,4 +33,14 @@ public final class RoutingHandlers {
         exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
         exchange.getResponseSender().send(stackTrace);
     }
+
+    public static void illegalStateServerHandler(HttpServerExchange exchange, Throwable e) {
+        String stackTrace = Utils.getStackTrace(e);
+
+        LOGGER.log(Level.WARNING, stackTrace);
+
+        exchange.setStatusCode(Response.ILLEGAL_STATE_SERVER.getCode());
+        exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
+        exchange.getResponseSender().send(stackTrace);
+    }
 }

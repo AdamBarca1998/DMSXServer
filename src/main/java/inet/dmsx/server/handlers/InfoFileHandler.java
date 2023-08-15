@@ -1,16 +1,18 @@
 package inet.dmsx.server.handlers;
 
+import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.Utils;
-import io.undertow.server.HttpHandler;
+import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.logging.Logger;
 
-public final class InfoFileHandler implements HttpHandler {
+public final class InfoFileHandler extends Handler {
 
-    private static final Logger LOGGER = Logger.getLogger(InfoFileHandler.class.getName());
+    public InfoFileHandler(DMSXServer server) {
+        super(server);
+    }
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {
@@ -18,11 +20,14 @@ public final class InfoFileHandler implements HttpHandler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Info file at " + params.filePath());
+            managementRequest();
 
             var size = Files.size(Path.of(params.filePath())); // bytes
 
             RoutingHandlers.sendOkMessage(exchange, String.valueOf(size));
             LOGGER.info("END Info file at " + params.filePath());
+        } catch (IllegalStateServerException e) {
+            RoutingHandlers.illegalStateServerHandler(exchange, e);
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }
