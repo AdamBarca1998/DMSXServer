@@ -27,7 +27,7 @@ public final class DeleteFileHandler extends ManagementHandler {
             Path fileToDeletePath = Paths.get(params.filePath());
             Files.deleteIfExists(fileToDeletePath);
 
-            RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+            RoutingHandlers.okHandler(exchange, Response.OK.getText());
             LOGGER.info("END Delete file at " + params.filePath());
         } catch (IllegalStateServerException e) {
             RoutingHandlers.illegalStateServerHandler(exchange, e);

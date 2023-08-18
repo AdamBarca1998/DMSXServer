@@ -16,7 +16,7 @@ public final class PingServerHandler extends ManagementHandler {
         try {
             LOGGER.info("START Ping server");
             super.handleRequest(exchange);
-            RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+            RoutingHandlers.okHandler(exchange, Response.OK.getText());
             LOGGER.info("END Ping server");
         } catch (IllegalStateServerException e) {
             RoutingHandlers.illegalStateServerHandler(exchange, e);

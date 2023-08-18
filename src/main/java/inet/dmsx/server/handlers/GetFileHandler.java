@@ -10,6 +10,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public final class GetFileHandler extends ManagementHandler {
 
@@ -27,6 +28,8 @@ public final class GetFileHandler extends ManagementHandler {
             super.handleRequest(exchange);
 
             var file = new File(params.filePath());
+
+            if (!file.isFile()) throw new FileNotFoundException("File not found: " + params.filePath());
 
             exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/octet-stream");
             try (BufferedOutputStream targetStream = new BufferedOutputStream(exchange.getOutputStream(), STREAM_BUFFER_LENGTH);

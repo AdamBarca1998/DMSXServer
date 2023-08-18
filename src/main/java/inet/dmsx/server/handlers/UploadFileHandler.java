@@ -31,7 +31,7 @@ public final class UploadFileHandler extends ManagementHandler {
             Path targetPath = Paths.get(params.filePath());
             Files.copy(inputStream, targetPath, StandardCopyOption.REPLACE_EXISTING);
 
-            RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+            RoutingHandlers.okHandler(exchange, Response.OK.getText());
             LOGGER.info("END Upload file at " + params.filePath());
         } catch (IllegalStateServerException e) {
             RoutingHandlers.illegalStateServerHandler(exchange, e);

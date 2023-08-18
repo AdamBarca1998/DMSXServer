@@ -29,10 +29,9 @@ public final class DMSXServer {
     public static final int PORT = PROPERTIES_PARSER.getPropertyValueInt(DMSXServerProperties.PORT);
     public static final String HOST = PROPERTIES_PARSER.getPropertyValue(DMSXServerProperties.HOST);
 
-    private final Undertow server;
+    private Undertow server;
     private final DeleterScheduler deleterScheduler = new DeleterScheduler();
     private ServerState state = new RunState();
-
     public DMSXServer() throws SchedulerException {
         HttpHandler routes = new RoutingHandler()
                 // management

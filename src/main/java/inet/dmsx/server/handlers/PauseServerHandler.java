@@ -23,7 +23,7 @@ public final class PauseServerHandler implements HttpHandler {
         try {
             LOGGER.info("START Pause server");
             server.setState(new PauseState());
-            RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+            RoutingHandlers.okHandler(exchange, Response.OK.getText());
             LOGGER.info("END Pause server");
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);

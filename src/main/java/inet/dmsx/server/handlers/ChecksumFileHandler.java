@@ -36,7 +36,7 @@ public final class ChecksumFileHandler extends ManagementHandler {
             }
             String hex = HexFormat.of().formatHex(md.digest());
 
-            RoutingHandlers.sendOkMessage(exchange, hex);
+            RoutingHandlers.okHandler(exchange, hex);
             LOGGER.info("END Checksum file at " + params.filePath());
         } catch (IllegalStateServerException e) {
             RoutingHandlers.illegalStateServerHandler(exchange, e);

@@ -23,7 +23,7 @@ public final class ResumeServerHandler implements HttpHandler {
         try {
             LOGGER.info("START Resume server");
             server.setState(new RunState());
-            RoutingHandlers.sendOkMessage(exchange, Response.OK.getText());
+            RoutingHandlers.okHandler(exchange, Response.OK.getText());
             LOGGER.info("END Resume server");
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);

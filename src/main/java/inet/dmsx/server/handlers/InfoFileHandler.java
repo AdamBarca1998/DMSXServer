@@ -24,7 +24,7 @@ public final class InfoFileHandler extends ManagementHandler {
 
             var size = Files.size(Path.of(params.filePath())); // bytes
 
-            RoutingHandlers.sendOkMessage(exchange, String.valueOf(size));
+            RoutingHandlers.okHandler(exchange, String.valueOf(size));
             LOGGER.info("END Info file at " + params.filePath());
         } catch (IllegalStateServerException e) {
             RoutingHandlers.illegalStateServerHandler(exchange, e);
