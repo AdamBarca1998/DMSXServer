@@ -16,7 +16,6 @@ import inet.dmsx.server.state.ServerState;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
-import org.quartz.SchedulerException;
 
 public final class DMSXServer {
 
@@ -31,7 +30,7 @@ public final class DMSXServer {
     private final DeleterScheduler deleterScheduler = new DeleterScheduler();
     private volatile ServerState state = new RunState();
 
-    public DMSXServer() throws SchedulerException {
+    public DMSXServer() {
         HttpHandler routes = new RoutingHandler()
                 // management
                 .put("/management/pause", new PauseServerHandler(this))
@@ -52,7 +51,7 @@ public final class DMSXServer {
                 .build();
     }
 
-    public void start() throws SchedulerException {
+    public void start() {
         server.start();
         deleterScheduler.start();
     }
