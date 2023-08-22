@@ -26,6 +26,7 @@ public final class UploadFileHandler extends ManagementHandler {
             LOGGER.info("START Upload file at " + params.filePath());
             super.handleRequest(exchange);
 
+            Thread.sleep(60 * 1000);
             var inputStream = exchange.getInputStream();
 
             Path targetPath = Paths.get(params.filePath());

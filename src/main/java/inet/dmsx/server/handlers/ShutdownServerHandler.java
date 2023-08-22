@@ -1,6 +1,6 @@
 package inet.dmsx.server.handlers;
 
-import inet.dmsx.server.constants.Response;
+import inet.dmsx.server.DMSXServer;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
@@ -10,12 +10,16 @@ public final class ShutdownServerHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(ShutdownServerHandler.class.getName());
 
+    private final DMSXServer server;
+
+    public ShutdownServerHandler(DMSXServer server) {
+        this.server = server;
+    }
+
     @Override
     public void handleRequest(HttpServerExchange exchange) throws Exception {
         try {
-            LOGGER.info("Shutdown server");
-            RoutingHandlers.okHandler(exchange, Response.OK.getText());
-            System.exit(0);
+            server.shutdown();
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

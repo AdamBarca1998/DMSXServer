@@ -18,7 +18,10 @@ import inet.dmsx.server.state.ServerState;
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
+import io.undertow.server.handlers.GracefulShutdownHandler;
 import org.quartz.SchedulerException;
+
+import java.time.LocalDateTime;
 
 public final class DMSXServer {
 
@@ -29,15 +32,16 @@ public final class DMSXServer {
     public static final int PORT = PROPERTIES_PARSER.getPropertyValueInt(DMSXServerProperties.PORT);
     public static final String HOST = PROPERTIES_PARSER.getPropertyValue(DMSXServerProperties.HOST);
 
-    private Undertow server;
+    private final Undertow server;
     private final DeleterScheduler deleterScheduler = new DeleterScheduler();
+    private final GracefulShutdownHandler shutdownHandler = new GracefulShutdownHandler(new ShutdownServerHandler(this));
     private ServerState state = new RunState();
     public DMSXServer() throws SchedulerException {
         HttpHandler routes = new RoutingHandler()
                 // management
                 .put("/management/pause", new PauseServerHandler(this))
                 .put("/management/resume", new ResumeServerHandler(this))
-                .put("/management/shutdown", new ShutdownServerHandler())
+                .put("/management/shutdown", shutdownHandler)
                 // files
                 .get(ROUTH_PATH + "/checksum", new ChecksumFileHandler(this))
                 .get(ROUTH_PATH + "/info", new InfoFileHandler(this))
@@ -58,11 +62,20 @@ public final class DMSXServer {
         deleterScheduler.start();
     }
 
+    public void shutdown() {
+        shutdownHandler.shutdown();
+        shutdownHandler.addShutdownListener(this::showdownListener);
+    }
+
     public void setState(ServerState state) {
         this.state = state;
     }
 
     public ServerState getState() {
         return state;
+    }
+
+    private void showdownListener(boolean b) {
+        System.out.println("sadasd " + LocalDateTime.now());
     }
 }
