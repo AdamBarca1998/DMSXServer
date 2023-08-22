@@ -1,7 +1,5 @@
 package inet.dmsx.server;
 
-import inet.dmsx.server.constants.DMSXServerProperties;
-import inet.dmsx.server.constants.PathParams;
 import inet.dmsx.server.handlers.ChecksumFileHandler;
 import inet.dmsx.server.handlers.DeleteFileHandler;
 import inet.dmsx.server.handlers.GetFileHandler;
@@ -31,7 +29,8 @@ public final class DMSXServer {
 
     private final Undertow server;
     private final DeleterScheduler deleterScheduler = new DeleterScheduler();
-    private ServerState state = new RunState();
+    private volatile ServerState state = new RunState();
+
     public DMSXServer() throws SchedulerException {
         HttpHandler routes = new RoutingHandler()
                 // management

@@ -1,7 +1,6 @@
 package inet.dmsx.server.handlers;
 
 import inet.dmsx.server.Utils;
-import inet.dmsx.server.constants.Response;
 import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
 
@@ -11,6 +10,9 @@ import java.util.logging.Logger;
 public final class RoutingHandlers {
 
     private static final Logger LOGGER = Logger.getLogger(RoutingHandlers.class.getName());
+
+    private RoutingHandlers() {
+    }
 
     public static void okHandler(HttpServerExchange exchange, String msg) {
         createHandler(exchange, msg, Response.OK.getCode());

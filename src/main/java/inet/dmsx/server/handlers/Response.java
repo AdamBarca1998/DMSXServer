@@ -1,8 +1,8 @@
-package inet.dmsx.server.constants;
+package inet.dmsx.server.handlers;
 
 import io.undertow.util.StatusCodes;
 
-public enum Response {
+enum Response {
 
     ILLEGAL_STATE_SERVER("Illegal state server!", StatusCodes.METHOD_NOT_ALLOWED),
     ERROR("Something wrong", StatusCodes.INTERNAL_SERVER_ERROR),
@@ -17,11 +17,11 @@ public enum Response {
     private String text;
     private int code;
 
-    public String getText() {
+    String getText() {
         return text;
     }
 
-    public int getCode() {
+    int getCode() {
         return code;
     }
 }

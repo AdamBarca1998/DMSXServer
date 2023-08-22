@@ -1,7 +1,6 @@
 package inet.dmsx.server.handlers;
 
 import inet.dmsx.server.DMSXServer;
-import inet.dmsx.server.constants.Response;
 import inet.dmsx.server.state.PauseState;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;

@@ -6,7 +6,7 @@ import org.quartz.JobExecutionContext;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.Path;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.logging.Logger;
@@ -22,10 +22,10 @@ public final class DeleterJob implements Job {
 
         LOGGER.info("START Delete " + dir + " every " + hours + " hours.");
 
-        Long cutoff = Instant.now().minus(Duration.ofHours(hours)).toEpochMilli();
+        long cutoff = Instant.now().minus(Duration.ofHours(hours)).toEpochMilli();
 
         try {
-            Files.newDirectoryStream(Paths.get(dir), p -> (p.toFile().lastModified()) < cutoff)
+            Files.newDirectoryStream(Path.of(dir), p -> (p.toFile().lastModified()) < cutoff)
                     .forEach(System.out::println);
         } catch (IOException e) {
             throw new RuntimeException(e);

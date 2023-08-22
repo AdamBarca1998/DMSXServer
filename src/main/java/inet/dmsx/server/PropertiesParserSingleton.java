@@ -1,7 +1,5 @@
 package inet.dmsx.server;
 
-import inet.dmsx.server.constants.DMSXServerProperties;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;

@@ -1,6 +1,5 @@
 package inet.dmsx.server;
 
-import inet.dmsx.server.constants.DMSXServerProperties;
 import org.quartz.SchedulerException;
 
 import java.io.FileInputStream;

@@ -20,7 +20,7 @@ public final class InfoFileHandler extends ManagementHandler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Info file at " + params.filePath());
-            super.handleRequest(exchange);
+            checkState();
 
             var size = Files.size(Path.of(params.filePath())); // bytes
 

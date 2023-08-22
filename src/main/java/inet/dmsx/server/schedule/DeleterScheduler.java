@@ -1,7 +1,7 @@
 package inet.dmsx.server.schedule;
 
 import inet.dmsx.server.PropertiesParserSingleton;
-import inet.dmsx.server.constants.DMSXServerProperties;
+import inet.dmsx.server.DMSXServerProperties;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;

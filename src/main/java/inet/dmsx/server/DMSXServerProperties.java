@@ -1,4 +1,4 @@
-package inet.dmsx.server.constants;
+package inet.dmsx.server;
 
 import java.util.HashMap;
 import java.util.Map;

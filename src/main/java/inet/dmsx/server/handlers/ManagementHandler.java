@@ -13,13 +13,12 @@ public abstract class ManagementHandler implements HttpHandler {
 
     private final DMSXServer server;
 
-    public ManagementHandler(DMSXServer server) {
+    protected ManagementHandler(DMSXServer server) {
         this.server = server;
     }
 
-    @Override
-    public void handleRequest(HttpServerExchange httpServerExchange) throws Exception {
-        server.getState().handleRequest();
+    protected void checkState() {
+        server.getState().handle();
     }
 
     protected boolean blockExchange(HttpServerExchange exchange) {

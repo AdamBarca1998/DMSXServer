@@ -4,8 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="IMPL exercise">
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="FIX server attr like 'final'">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/DMSXServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/PathParams.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/PathParams.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/constants/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ManagementHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ManagementHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PauseServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PauseServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/PingServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ResumeServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ResumeServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/RoutingHandlers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ShutdownServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ShutdownServerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/state/PauseState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/state/PauseState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/state/RunState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/state/RunState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/state/ServerState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/state/ServerState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +76,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/barca/Desktop/DMSXServer/src/main/resources",
     "node.js.detected.package.eslint": "true",
@@ -86,7 +106,7 @@
       <option name="PROGRAM_PARAMETERS" value="C:\Users\barca\Desktop\javafile\app.properties" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="inet.dmsx.server.constants.*" />
+          <option name="PATTERN" value="inet.dmsx.server.handlers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,6 +148,7 @@
       <workItem from="1692087845205" duration="8458000" />
       <workItem from="1692174838837" duration="2880000" />
       <workItem from="1692348326220" duration="7500000" />
+      <workItem from="1692695371123" duration="2207000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -276,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692095092969</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="FIX server attr like 'final'">
+      <created>1692695544720</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1692695544720</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +333,8 @@
     <MESSAGE value="REIMPL checksum" />
     <MESSAGE value="IMPL pause and resume" />
     <MESSAGE value="REIMPL management handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="REIMPL management handler" />
+    <MESSAGE value="FIX server attr like 'final'" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX server attr like 'final'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
