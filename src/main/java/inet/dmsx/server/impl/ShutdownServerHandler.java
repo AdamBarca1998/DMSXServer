@@ -5,7 +5,7 @@ import io.undertow.server.HttpServerExchange;
 
 import java.util.logging.Logger;
 
-public final class ShutdownServerHandler implements HttpHandler {
+final class ShutdownServerHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(ShutdownServerHandler.class.getName());
 

@@ -1,7 +1,6 @@
 package inet.dmsx.server.impl;
 
 import com.sun.management.OperatingSystemMXBean;
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.properties.DMSXServerProperties;
 import inet.dmsx.server.properties.PropertiesParserSingleton;
 import io.undertow.server.HttpHandler;
@@ -12,12 +11,12 @@ import java.lang.management.ManagementFactory;
 import java.util.List;
 import java.util.logging.Logger;
 
-public final class HealthServerHandler implements HttpHandler {
+final class HealthServerHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(HealthServerHandler.class.getName());
     private final DMSXServer server;
 
-    public HealthServerHandler(DMSXServer server) {
+    HealthServerHandler(DMSXServer server) {
         this.server = server;
     }
 

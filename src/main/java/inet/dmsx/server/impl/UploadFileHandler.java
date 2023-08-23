@@ -1,6 +1,5 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.Utils;
 import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
@@ -9,9 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
-public final class UploadFileHandler extends ManagementHandler {
+final class UploadFileHandler extends ManagementHandler {
 
-    public UploadFileHandler(DMSXServer server) {
+    UploadFileHandler(DMSXServer server) {
         super(server);
     }
 

@@ -1,12 +1,11 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
 import java.util.logging.Logger;
 
-public abstract class ManagementHandler implements HttpHandler {
+abstract class ManagementHandler implements HttpHandler {
 
     protected static final Logger LOGGER = Logger.getLogger(ManagementHandler.class.getName());
     protected static final int STREAM_BUFFER_LENGTH = 4096;

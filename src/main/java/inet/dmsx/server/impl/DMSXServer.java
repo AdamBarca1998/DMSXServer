@@ -1,16 +1,5 @@
-package inet.dmsx.server;
+package inet.dmsx.server.impl;
 
-import inet.dmsx.server.impl.ChecksumFileHandler;
-import inet.dmsx.server.impl.DeleteFileHandler;
-import inet.dmsx.server.impl.GetFileHandler;
-import inet.dmsx.server.impl.HealthServerHandler;
-import inet.dmsx.server.impl.InfoFileHandler;
-import inet.dmsx.server.impl.PauseServerHandler;
-import inet.dmsx.server.impl.PingServerHandler;
-import inet.dmsx.server.impl.ResumeServerHandler;
-import inet.dmsx.server.impl.RoutingHandlers;
-import inet.dmsx.server.impl.ShutdownServerHandler;
-import inet.dmsx.server.impl.UploadFileHandler;
 import inet.dmsx.server.params.PathParams;
 import inet.dmsx.server.properties.DMSXServerProperties;
 import inet.dmsx.server.properties.PropertiesParserSingleton;

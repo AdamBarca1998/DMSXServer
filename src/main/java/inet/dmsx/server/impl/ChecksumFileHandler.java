@@ -1,6 +1,5 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.Utils;
 import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
@@ -11,11 +10,11 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.util.HexFormat;
 
-public final class ChecksumFileHandler extends ManagementHandler {
+final class ChecksumFileHandler extends ManagementHandler {
 
     private static final String MD5 = "MD5";
 
-    public ChecksumFileHandler(DMSXServer server) {
+    ChecksumFileHandler(DMSXServer server) {
         super(server);
     }
 

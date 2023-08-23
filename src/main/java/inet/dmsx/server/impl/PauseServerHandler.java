@@ -1,19 +1,18 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.state.PauseState;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
 import java.util.logging.Logger;
 
-public final class PauseServerHandler implements HttpHandler {
+final class PauseServerHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(PauseServerHandler.class.getName());
 
     private final DMSXServer server;
 
-    public PauseServerHandler(DMSXServer server) {
+    PauseServerHandler(DMSXServer server) {
         this.server = server;
     }
 

@@ -1,12 +1,11 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
 
-public final class PingServerHandler extends ManagementHandler {
+final class PingServerHandler extends ManagementHandler {
 
-    public PingServerHandler(DMSXServer server) {
+    PingServerHandler(DMSXServer server) {
         super(server);
     }
 

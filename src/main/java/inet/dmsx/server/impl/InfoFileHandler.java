@@ -1,15 +1,14 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.Utils;
 import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
 
 import java.nio.file.Files;
 
-public final class InfoFileHandler extends ManagementHandler {
+final class InfoFileHandler extends ManagementHandler {
 
-    public InfoFileHandler(DMSXServer server) {
+    InfoFileHandler(DMSXServer server) {
         super(server);
     }
 

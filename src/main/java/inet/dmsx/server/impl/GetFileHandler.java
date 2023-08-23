@@ -1,6 +1,5 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.Utils;
 import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
@@ -9,9 +8,9 @@ import io.undertow.util.Headers;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 
-public final class GetFileHandler extends ManagementHandler {
+final class GetFileHandler extends ManagementHandler {
 
-    public GetFileHandler(DMSXServer server) {
+    GetFileHandler(DMSXServer server) {
         super(server);
     }
 

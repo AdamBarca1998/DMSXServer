@@ -1,5 +1,6 @@
 package inet.dmsx.server;
 
+import inet.dmsx.server.impl.DMSXServer;
 import inet.dmsx.server.properties.DMSXServerProperties;
 import inet.dmsx.server.properties.PropertiesParserSingleton;
 

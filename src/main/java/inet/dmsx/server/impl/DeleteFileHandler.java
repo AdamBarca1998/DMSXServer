@@ -1,6 +1,5 @@
 package inet.dmsx.server.impl;
 
-import inet.dmsx.server.DMSXServer;
 import inet.dmsx.server.Utils;
 import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
@@ -8,9 +7,9 @@ import io.undertow.server.HttpServerExchange;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public final class DeleteFileHandler extends ManagementHandler {
+final class DeleteFileHandler extends ManagementHandler {
 
-    public DeleteFileHandler(DMSXServer server) {
+    DeleteFileHandler(DMSXServer server) {
         super(server);
     }
 
