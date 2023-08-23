@@ -14,7 +14,7 @@ public final class PropertiesParserSingleton {
 
     private PropertiesParserSingleton() {
         try {
-            appProps.load(new FileInputStream(Main.CONFIG_PATH));
+            appProps.load(new FileInputStream(Main.getConfigPath()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

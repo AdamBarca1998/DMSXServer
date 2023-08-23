@@ -9,7 +9,6 @@ import io.undertow.util.Headers;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 public final class GetFileHandler extends ManagementHandler {
 
@@ -27,10 +26,6 @@ public final class GetFileHandler extends ManagementHandler {
             checkState();
 
             var file = new File(params.filePath());
-
-            if (!file.isFile()) {
-                throw new FileNotFoundException("File not found: " + params.filePath());
-            }
 
             exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/octet-stream");
             try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file), STREAM_BUFFER_LENGTH)) {
