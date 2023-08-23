@@ -1,7 +1,7 @@
 package inet.dmsx.server.schedule;
 
-import inet.dmsx.server.DMSXServerProperties;
-import inet.dmsx.server.PropertiesParserSingleton;
+import inet.dmsx.server.properties.DMSXServerProperties;
+import inet.dmsx.server.properties.PropertiesParserSingleton;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -17,15 +17,15 @@ public final class DeleterScheduler {
     private final DeleterRunnable emailRunnable;
 
     public DeleterScheduler() {
-        var tmpDeleteH = PROPERTIES_PARSER.getPropertyValueInt(DMSXServerProperties.TMP_DELETE_OLDER_HRS);
-        var emailDeleteH = PROPERTIES_PARSER.getPropertyValueInt(DMSXServerProperties.EMAIL_DELETE_OLDER_HRS);
+        var tmpDeleteH = PROPERTIES_PARSER.getPropertyValueInt("tmp" + DMSXServerProperties.DELETE_OLDER_HRS.getText());
+        var emailDeleteH = PROPERTIES_PARSER.getPropertyValueInt("email" + DMSXServerProperties.DELETE_OLDER_HRS.getText());
 
         tmpRunnable = new DeleterRunnable(
-                PROPERTIES_PARSER.getPropertyValue(DMSXServerProperties.TMP_DIR_PATH),
+                PROPERTIES_PARSER.getPropertyValue("tmp" + DMSXServerProperties.DIR_PATH.getText()),
                 tmpDeleteH
         );
         emailRunnable = new DeleterRunnable(
-                PROPERTIES_PARSER.getPropertyValue(DMSXServerProperties.EMAIL_DIR_PATH),
+                PROPERTIES_PARSER.getPropertyValue("email" + DMSXServerProperties.DIR_PATH.getText()),
                 emailDeleteH
         );
     }

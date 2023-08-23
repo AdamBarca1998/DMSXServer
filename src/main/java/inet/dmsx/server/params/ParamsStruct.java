@@ -1,4 +1,4 @@
-package inet.dmsx.server;
+package inet.dmsx.server.params;
 
 public record ParamsStruct(
         String storageId,

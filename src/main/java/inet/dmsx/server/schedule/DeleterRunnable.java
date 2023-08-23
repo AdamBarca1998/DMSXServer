@@ -15,7 +15,7 @@ final class DeleterRunnable implements Runnable {
     private final String dir;
     private final int hours;
 
-    public DeleterRunnable(String dir, int hours) {
+    DeleterRunnable(String dir, int hours) {
         this.dir = dir;
         this.hours = hours;
     }
@@ -26,7 +26,7 @@ final class DeleterRunnable implements Runnable {
 
         try {
             recursiveDeleteFilesOlderThanNHours(dir, hours);
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new ErrorDeleteFileException("Something wrong with delete directory at: " + dir);
         }
 
@@ -43,12 +43,13 @@ final class DeleterRunnable implements Runnable {
                 try {
                     recursiveDeleteFilesOlderThanNHours(path.toString(), hours);
                 } catch (IOException e) {
-                    throw new ErrorDeleteFileException("Something wrong with delete directory at: " + path);
+                    throw new ErrorDeleteFileException("Something wrong with delete dir at: " + path);
                 }
             } else {
                 try {
                     if (Files.getLastModifiedTime(path).to(TimeUnit.MILLISECONDS) < cutoff) {
                         Files.deleteIfExists(path);
+                        LOGGER.info(() -> "Delete file at: " + path);
                     }
                 } catch (IOException e) {
                     throw new ErrorDeleteFileException("Can't delete file at: " + path);
@@ -59,7 +60,7 @@ final class DeleterRunnable implements Runnable {
         files.close();
     }
 
-    public int getHours() {
+    int getHours() {
         return hours;
     }
 }

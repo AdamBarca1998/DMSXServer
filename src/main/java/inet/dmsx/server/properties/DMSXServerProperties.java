@@ -1,4 +1,4 @@
-package inet.dmsx.server;
+package inet.dmsx.server.properties;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,12 +7,9 @@ public enum DMSXServerProperties {
 
     HOST("host"),
     PORT("port"),
-    MNT_DIR_PATH("mnt.dir_path"),
-    TMP_DIR_PATH("tmp.dir_path"),
-    EMAIL_DIR_PATH("email.dir_path"),
-    TMP_DELETE_OLDER_HRS("tmp.delete_older_hrs"),
-    EMAIL_DELETE_OLDER_HRS("email.delete_older_hrs"),
-    LOG_FILE_PATH("log.file_path")
+    DIR_PATH(".dir_path"),
+    DELETE_OLDER_HRS(".delete_older_hrs"),
+    FILE_PATH(".file_path")
     ;
 
     DMSXServerProperties(String text) {
@@ -31,9 +28,5 @@ public enum DMSXServerProperties {
 
     public String getText() {
         return text;
-    }
-
-    public static DMSXServerProperties getDirPathOfStorageId(String storageId) {
-        return BY_TEXT.get(storageId + ".dir_path");
     }
 }

@@ -1,5 +1,8 @@
 package inet.dmsx.server;
 
+import inet.dmsx.server.properties.DMSXServerProperties;
+import inet.dmsx.server.properties.PropertiesParserSingleton;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.logging.LogManager;
@@ -14,7 +17,7 @@ public class Main {
         }
         CONFIG_PATH = args[0];
         var propertiesParser = PropertiesParserSingleton.getInstance();
-        LogManager.getLogManager().readConfiguration(new FileInputStream(propertiesParser.getPropertyValue(DMSXServerProperties.LOG_FILE_PATH)));
+        LogManager.getLogManager().readConfiguration(new FileInputStream(propertiesParser.getPropertyValue("log" + DMSXServerProperties.FILE_PATH.getText())));
 
         DMSXServer dmsxServer = new DMSXServer();
 

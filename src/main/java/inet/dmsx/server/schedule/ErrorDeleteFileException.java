@@ -1,8 +1,8 @@
 package inet.dmsx.server.schedule;
 
-public class ErrorDeleteFileException extends RuntimeException {
+class ErrorDeleteFileException extends RuntimeException {
 
-    public ErrorDeleteFileException(String msg) {
+    ErrorDeleteFileException(String msg) {
         super(msg);
     }
 }
