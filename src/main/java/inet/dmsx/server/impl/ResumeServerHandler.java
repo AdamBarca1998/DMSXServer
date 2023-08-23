@@ -1,29 +1,29 @@
-package inet.dmsx.server.handlers;
+package inet.dmsx.server.impl;
 
 import inet.dmsx.server.DMSXServer;
-import inet.dmsx.server.state.PauseState;
+import inet.dmsx.server.state.RunState;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 
 import java.util.logging.Logger;
 
-public final class PauseServerHandler implements HttpHandler {
+public final class ResumeServerHandler implements HttpHandler {
 
-    private static final Logger LOGGER = Logger.getLogger(PauseServerHandler.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(ResumeServerHandler.class.getName());
 
     private final DMSXServer server;
 
-    public PauseServerHandler(DMSXServer server) {
+    public ResumeServerHandler(DMSXServer server) {
         this.server = server;
     }
 
     @Override
     public void handleRequest(HttpServerExchange exchange) {
         try {
-            LOGGER.info("START Pause server");
-            server.setState(new PauseState());
+            LOGGER.info("START Resume server");
+            server.setState(new RunState());
             RoutingHandlers.okHandler(exchange, Response.OK.getText());
-            LOGGER.info("END Pause server");
+            LOGGER.info("END Resume server");
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
         }

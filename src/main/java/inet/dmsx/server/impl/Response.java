@@ -1,4 +1,4 @@
-package inet.dmsx.server.handlers;
+package inet.dmsx.server.impl;
 
 import io.undertow.util.StatusCodes;
 
@@ -14,8 +14,8 @@ enum Response {
         this.code = code;
     }
 
-    private String text;
-    private int code;
+    private final String text;
+    private final int code;
 
     String getText() {
         return text;

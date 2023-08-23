@@ -1,15 +1,16 @@
 package inet.dmsx.server;
 
-import inet.dmsx.server.handlers.ChecksumFileHandler;
-import inet.dmsx.server.handlers.DeleteFileHandler;
-import inet.dmsx.server.handlers.GetFileHandler;
-import inet.dmsx.server.handlers.InfoFileHandler;
-import inet.dmsx.server.handlers.PauseServerHandler;
-import inet.dmsx.server.handlers.PingServerHandler;
-import inet.dmsx.server.handlers.ResumeServerHandler;
-import inet.dmsx.server.handlers.RoutingHandlers;
-import inet.dmsx.server.handlers.ShutdownServerHandler;
-import inet.dmsx.server.handlers.UploadFileHandler;
+import inet.dmsx.server.impl.ChecksumFileHandler;
+import inet.dmsx.server.impl.DeleteFileHandler;
+import inet.dmsx.server.impl.GetFileHandler;
+import inet.dmsx.server.impl.HealthServerHandler;
+import inet.dmsx.server.impl.InfoFileHandler;
+import inet.dmsx.server.impl.PauseServerHandler;
+import inet.dmsx.server.impl.PingServerHandler;
+import inet.dmsx.server.impl.ResumeServerHandler;
+import inet.dmsx.server.impl.RoutingHandlers;
+import inet.dmsx.server.impl.ShutdownServerHandler;
+import inet.dmsx.server.impl.UploadFileHandler;
 import inet.dmsx.server.params.PathParams;
 import inet.dmsx.server.properties.DMSXServerProperties;
 import inet.dmsx.server.properties.PropertiesParserSingleton;
@@ -31,7 +32,7 @@ public final class DMSXServer {
 
     private final Undertow server;
     private final DeleterScheduler deleterScheduler = new DeleterScheduler();
-    private volatile ServerState state = new RunState();
+    private volatile ServerState state = new RunState(); //NOSONAR
 
     public DMSXServer() {
         HttpHandler routes = new RoutingHandler()
@@ -47,6 +48,7 @@ public final class DMSXServer {
                 .delete(ROUTH_PATH, new DeleteFileHandler(this))
                 // server
                 .get("/ping", new PingServerHandler(this))
+                .get("/health", new HealthServerHandler(this))
                 .setFallbackHandler(RoutingHandlers::notFoundHandler);
 
         server = Undertow.builder()

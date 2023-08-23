@@ -1,8 +1,5 @@
 package inet.dmsx.server.properties;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public enum DMSXServerProperties {
 
     HOST("host"),
@@ -16,15 +13,7 @@ public enum DMSXServerProperties {
         this.text = text;
     }
 
-    private static final Map<String, DMSXServerProperties> BY_TEXT = new HashMap<>();
-
-    static {
-        for (DMSXServerProperties e: values()) {
-            BY_TEXT.put(e.getText(), e);
-        }
-    }
-
-    private String text;
+    private final String text;
 
     public String getText() {
         return text;

@@ -1,4 +1,4 @@
-package inet.dmsx.server.handlers;
+package inet.dmsx.server.impl;
 
 import inet.dmsx.server.DMSXServer;
 import io.undertow.server.HttpHandler;
