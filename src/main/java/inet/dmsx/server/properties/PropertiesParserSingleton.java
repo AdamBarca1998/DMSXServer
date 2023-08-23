@@ -6,25 +6,23 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public final class PropertiesParserSingleton {
+public final class PropertiesParserSingleton { //NOSONAR
 
-    private static PropertiesParserSingleton INSTANCE;
+    private static final PropertiesParserSingleton INSTANCE = new PropertiesParserSingleton();
 
     private final Properties appProps = new Properties();
 
     private PropertiesParserSingleton() {
-        try {
-            appProps.load(new FileInputStream(Main.getConfigPath()));
+        var path = Main.getConfigPath();
+
+        try (var fis = new FileInputStream(path)){
+            appProps.load(fis);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new ErrorLoadConfigFileException("Can't load config file at: " + path);
         }
     }
 
     public static PropertiesParserSingleton getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new PropertiesParserSingleton();
-        }
-
         return INSTANCE;
     }
 

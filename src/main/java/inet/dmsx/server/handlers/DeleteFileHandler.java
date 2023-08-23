@@ -22,7 +22,7 @@ public final class DeleteFileHandler extends ManagementHandler {
             LOGGER.info("START Delete file at " + params.filePath());
             checkState();
 
-            Path fileToDeletePath = Path.of(params.filePath());
+            Path fileToDeletePath = params.filePath();
             Files.deleteIfExists(fileToDeletePath);
 
             RoutingHandlers.okHandler(exchange, Response.OK.getText());

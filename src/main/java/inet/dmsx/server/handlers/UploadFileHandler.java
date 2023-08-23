@@ -22,11 +22,11 @@ public final class UploadFileHandler extends ManagementHandler {
             var params = Utils.getParamsStruct(exchange);
 
             LOGGER.info("START Upload file at " + params.filePath());
-            checkState();;
+            checkState();
 
             var inputStream = exchange.getInputStream();
 
-            Path targetPath = Path.of(params.filePath());
+            Path targetPath = params.filePath();
             Files.copy(inputStream, targetPath, StandardCopyOption.REPLACE_EXISTING);
 
             RoutingHandlers.okHandler(exchange, Response.OK.getText());

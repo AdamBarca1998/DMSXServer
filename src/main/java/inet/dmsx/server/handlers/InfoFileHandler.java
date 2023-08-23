@@ -6,7 +6,6 @@ import inet.dmsx.server.state.IllegalStateServerException;
 import io.undertow.server.HttpServerExchange;
 
 import java.nio.file.Files;
-import java.nio.file.Path;
 
 public final class InfoFileHandler extends ManagementHandler {
 
@@ -22,7 +21,7 @@ public final class InfoFileHandler extends ManagementHandler {
             LOGGER.info("START Info file at " + params.filePath());
             checkState();
 
-            var size = Files.size(Path.of(params.filePath())); // bytes
+            var size = Files.size(params.filePath()); // bytes
 
             RoutingHandlers.okHandler(exchange, String.valueOf(size));
             LOGGER.info("END Info file at " + params.filePath());

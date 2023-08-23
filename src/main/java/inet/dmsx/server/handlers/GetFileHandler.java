@@ -7,7 +7,6 @@ import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Headers;
 
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.FileInputStream;
 
 public final class GetFileHandler extends ManagementHandler {
@@ -25,7 +24,7 @@ public final class GetFileHandler extends ManagementHandler {
             LOGGER.info("START Get file at " + params.filePath());
             checkState();
 
-            var file = new File(params.filePath());
+            var file = params.filePath().toFile();
 
             exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/octet-stream");
             try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file), STREAM_BUFFER_LENGTH)) {

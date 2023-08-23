@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="REIMPL prop">
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Main.java" afterDir="false" />
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="SolarLint">
+      <change afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/properties/ErrorLoadConfigFileException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/ChecksumFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/DeleteFileHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/GetFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/InfoFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/handlers/UploadFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/params/ParamsStruct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/params/ParamsStruct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/properties/PropertiesParserSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/properties/PropertiesParserSingleton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +86,7 @@
       <recent name="C:\Users\barca\Desktop\DMSXServer\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="inet.dmsx.server.properties" />
       <recent name="inet.dmsx.server.schedule" />
       <recent name="inet.dmsx.server.handlers" />
     </key>
@@ -133,7 +141,7 @@
       <workItem from="1692174838837" duration="2880000" />
       <workItem from="1692348326220" duration="7500000" />
       <workItem from="1692695371123" duration="7961000" />
-      <workItem from="1692780526837" duration="2280000" />
+      <workItem from="1692780526837" duration="4900000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -310,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692785170712</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="SolarLint">
+      <created>1692785580821</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1692785580821</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +343,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="IMPL upload file" />
     <MESSAGE value="IMPL get file" />
     <MESSAGE value="IMPL delete and info file" />
     <MESSAGE value="IMPL checksum file" />
@@ -353,7 +367,8 @@
     <MESSAGE value="CP" />
     <MESSAGE value="REIMPL DeleterScheduler.java" />
     <MESSAGE value="REIMPL prop" />
-    <option name="LAST_COMMIT_MESSAGE" value="REIMPL prop" />
+    <MESSAGE value="SolarLint" />
+    <option name="LAST_COMMIT_MESSAGE" value="SolarLint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

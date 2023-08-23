@@ -8,6 +8,7 @@ import io.undertow.server.HttpServerExchange;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.nio.file.Path;
 
 public final class Utils {
 
@@ -19,7 +20,7 @@ public final class Utils {
         var directory = exchange.getQueryParameters().get(PathParams.DIRECTORY.name()).getFirst();
         var fileName = exchange.getQueryParameters().get(PathParams.FILE_NAME.name()).getFirst();
         var dirPath = PropertiesParserSingleton.getInstance().getPropertyValue(storageId + DMSXServerProperties.DIR_PATH.getText());
-        var filePath = dirPath + "\\" + directory + "\\" + fileName;
+        var filePath = Path.of(dirPath, directory, fileName);
 
         return new ParamsStruct(storageId, directory, fileName, filePath);
     }

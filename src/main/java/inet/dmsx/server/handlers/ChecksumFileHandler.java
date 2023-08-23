@@ -7,7 +7,6 @@ import io.undertow.server.HttpServerExchange;
 
 import java.io.BufferedInputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.util.HexFormat;
@@ -29,7 +28,7 @@ public final class ChecksumFileHandler extends ManagementHandler {
             checkState();
 
             MessageDigest md = MessageDigest.getInstance(MD5);
-            try (var is = new BufferedInputStream(Files.newInputStream(Path.of(params.filePath())), STREAM_BUFFER_LENGTH);
+            try (var is = new BufferedInputStream(Files.newInputStream(params.filePath()), STREAM_BUFFER_LENGTH);
                  DigestInputStream dis = new DigestInputStream(is, md))
             {
                 dis.readAllBytes();
