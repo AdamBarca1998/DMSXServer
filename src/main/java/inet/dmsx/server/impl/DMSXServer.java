@@ -10,6 +10,8 @@ import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
 
+import static io.undertow.UndertowOptions.ENABLE_HTTP2;
+
 public final class DMSXServer {
 
     private static final PropertiesParserSingleton PROPERTIES_PARSER = PropertiesParserSingleton.getInstance();
@@ -21,7 +23,7 @@ public final class DMSXServer {
 
     private final Undertow server;
     private final DeleterScheduler deleterScheduler = new DeleterScheduler();
-    private volatile ServerState state = new RunState(); //NOSONAR
+    private volatile ServerState state = new RunState();
 
     public DMSXServer() {
         HttpHandler routes = new RoutingHandler()
@@ -42,6 +44,7 @@ public final class DMSXServer {
 
         server = Undertow.builder()
                 .addHttpListener(PORT, HOST, routes)
+                .setServerOption(ENABLE_HTTP2, true)
                 .build();
     }
 
