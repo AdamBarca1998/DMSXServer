@@ -6,7 +6,7 @@ import io.undertow.server.HttpServerExchange;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
 
 final class UploadFileHandler extends ManagementHandler {
 
@@ -26,7 +26,7 @@ final class UploadFileHandler extends ManagementHandler {
             var inputStream = exchange.getInputStream();
 
             Path targetPath = params.filePath();
-            Files.copy(inputStream, targetPath, StandardCopyOption.REPLACE_EXISTING);
+            Files.write(targetPath, inputStream.readAllBytes(), StandardOpenOption.APPEND);
 
             RoutingHandlers.okHandler(exchange, Response.OK.getText());
             LOGGER.info("END Upload file at " + params.filePath());
