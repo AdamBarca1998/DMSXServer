@@ -10,6 +10,7 @@ import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.RoutingHandler;
 
+import static io.undertow.UndertowOptions.ALWAYS_SET_KEEP_ALIVE;
 import static io.undertow.UndertowOptions.ENABLE_HTTP2;
 
 public final class DMSXServer {
@@ -45,6 +46,7 @@ public final class DMSXServer {
         server = Undertow.builder()
                 .addHttpListener(PORT, HOST, routes)
                 .setServerOption(ENABLE_HTTP2, true)
+                .setServerOption(ALWAYS_SET_KEEP_ALIVE, true)
                 .build();
     }
 
