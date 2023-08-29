@@ -6,32 +6,34 @@ import inet.dmsx.server.properties.PropertiesParserSingleton;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 public final class DeleterScheduler {
 
+    private static final Logger LOGGER = Logger.getLogger(DeleterScheduler.class.getName());
     private static final PropertiesParserSingleton PROPERTIES_PARSER = PropertiesParserSingleton.getInstance();
 
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
-    private final DeleterRunnable tmpRunnable;
-    private final DeleterRunnable emailRunnable;
+    public void start() {
+        PROPERTIES_PARSER.getStorageIds().forEach(storageId -> {
+            try {
+                var deleteH = PROPERTIES_PARSER.getPropertyValueInt(storageId + DMSXServerProperties.DELETE_OLDER_HRS.getText());
+                var runnable = new DeleterRunnable(
+                        PROPERTIES_PARSER.getPropertyValue(storageId + DMSXServerProperties.DIR_PATH.getText()),
+                        deleteH
+                );
 
-    public DeleterScheduler() {
-        var tmpDeleteH = PROPERTIES_PARSER.getPropertyValueInt("tmp" + DMSXServerProperties.DELETE_OLDER_HRS.getText());
-        var emailDeleteH = PROPERTIES_PARSER.getPropertyValueInt("email" + DMSXServerProperties.DELETE_OLDER_HRS.getText());
+                scheduler.schedule(runnable, deleteH, TimeUnit.MINUTES);
 
-        tmpRunnable = new DeleterRunnable(
-                PROPERTIES_PARSER.getPropertyValue("tmp" + DMSXServerProperties.DIR_PATH.getText()),
-                tmpDeleteH
-        );
-        emailRunnable = new DeleterRunnable(
-                PROPERTIES_PARSER.getPropertyValue("email" + DMSXServerProperties.DIR_PATH.getText()),
-                emailDeleteH
-        );
+                LOGGER.info(() -> "Create runnable " + storageId + " with " + deleteH + " hours");
+            } catch (NumberFormatException e) {
+                LOGGER.info(() -> "Don't create runnable " + storageId);
+            }
+        });
     }
 
-    public void start() {
-        scheduler.schedule(tmpRunnable, tmpRunnable.getHours(), TimeUnit.HOURS);
-        scheduler.schedule(emailRunnable, emailRunnable.getHours(), TimeUnit.HOURS);
+    public void stop() {
+        scheduler.shutdown();
     }
 }

@@ -53,6 +53,11 @@ public final class DMSXServer {
         deleterScheduler.start();
     }
 
+    public void stop() {
+        server.stop();
+        deleterScheduler.stop();
+    }
+
     public void setState(ServerState state) {
         this.state = state;
     }

@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="UPD to http2">
+    <list default="true" id="dd776a12-c7f9-4901-9bfb-927619bc25eb" name="Changes" comment="REIMPL upload to append">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/impl/UploadFileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/impl/UploadFileHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/properties/DMSXServerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/properties/DMSXServerProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/properties/PropertiesParserSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/properties/PropertiesParserSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/inet/dmsx/server/schedule/DeleterScheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +139,7 @@
       <workItem from="1692780526837" duration="14328000" />
       <workItem from="1692865513691" duration="5936000" />
       <workItem from="1692882298135" duration="1530000" />
-      <workItem from="1693210456180" duration="2967000" />
+      <workItem from="1693210456180" duration="8360000" />
     </task>
     <task id="LOCAL-00001" summary="INIT COMMIT">
       <created>1690978608386</created>
@@ -348,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692882520874</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="REIMPL upload to append">
+      <created>1693225121574</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1693225121574</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +376,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove getSizeInMb() method to Utils" />
     <MESSAGE value="DEL useless enum" />
     <MESSAGE value="REIMPL dir_part for storage ids" />
     <MESSAGE value="ADD to Enum Response attr 'code'" />
@@ -391,7 +400,8 @@
     <MESSAGE value="IMPL 'health' endpoint" />
     <MESSAGE value="REIMPL repacking due to package private" />
     <MESSAGE value="UPD to http2" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPD to http2" />
+    <MESSAGE value="REIMPL upload to append" />
+    <option name="LAST_COMMIT_MESSAGE" value="REIMPL upload to append" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

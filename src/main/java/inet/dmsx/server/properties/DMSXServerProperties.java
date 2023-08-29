@@ -6,7 +6,8 @@ public enum DMSXServerProperties {
     PORT("port"),
     DIR_PATH(".dir_path"),
     DELETE_OLDER_HRS(".delete_older_hrs"),
-    FILE_PATH(".file_path")
+    FILE_PATH(".file_path"),
+    STORAGE_IDS("storageIds")
     ;
 
     DMSXServerProperties(String text) {
