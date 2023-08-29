@@ -24,7 +24,7 @@ public final class DeleterScheduler {
                         deleteH
                 );
 
-                scheduler.schedule(runnable, deleteH, TimeUnit.MINUTES);
+                scheduler.schedule(runnable, deleteH, TimeUnit.HOURS);
 
                 LOGGER.info(() -> "Create runnable " + storageId + " with " + deleteH + " hours");
             } catch (NumberFormatException e) {

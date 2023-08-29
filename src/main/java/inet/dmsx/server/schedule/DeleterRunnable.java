@@ -25,7 +25,7 @@ final class DeleterRunnable implements Runnable {
         LOGGER.info(() -> "START Delete " + dir + " every " + hours + " hours.");
 
         try(var files = Files.walk(Path.of(dir), FileVisitOption.FOLLOW_LINKS)) {
-            long cutoff = Instant.now().minus(Duration.ofMinutes(hours)).toEpochMilli();
+            long cutoff = Instant.now().minus(Duration.ofHours(hours)).toEpochMilli();
 
             files.filter(p -> {
                 try {
