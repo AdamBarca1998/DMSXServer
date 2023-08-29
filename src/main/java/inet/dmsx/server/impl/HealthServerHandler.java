@@ -8,12 +8,14 @@ import io.undertow.server.HttpServerExchange;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
 final class HealthServerHandler implements HttpHandler {
 
     private static final Logger LOGGER = Logger.getLogger(HealthServerHandler.class.getName());
+    private static final PropertiesParserSingleton PROPERTIES_PARSER = PropertiesParserSingleton.getInstance();
     private final DMSXServer server;
 
     HealthServerHandler(DMSXServer server) {
@@ -24,16 +26,14 @@ final class HealthServerHandler implements HttpHandler {
     public void handleRequest(HttpServerExchange exchange) {
         try {
             LOGGER.info("START Health server");
-            var clazz = server.getState().getClass().getName();
-            OperatingSystemMXBean osBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
 
-            var obj = new HealthDto(
-                    clazz.substring(clazz.lastIndexOf('.') + 1),
-                    osBean.getProcessCpuLoad(),
+            var healthDto = new HealthDto(
+                    server.getState().getClass().getSimpleName(),
+                    ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class).getProcessCpuLoad(),
                     getMemoryDtoList()
             );
 
-            RoutingHandlers.okJsonHandler(exchange, obj);
+            RoutingHandlers.okJsonHandler(exchange, healthDto);
             LOGGER.info("END Health server");
         } catch (Exception e) {
             RoutingHandlers.exceptionHandler(exchange, e);
@@ -41,35 +41,25 @@ final class HealthServerHandler implements HttpHandler {
     }
 
     private List<MemoryDto> getMemoryDtoList() {
-        var tmpFile = new File(PropertiesParserSingleton.getInstance().getPropertyValue("tmp" + DMSXServerProperties.DIR_PATH.getText()));
-        var emailFile = new File(PropertiesParserSingleton.getInstance().getPropertyValue("email" + DMSXServerProperties.DIR_PATH.getText()));
-        var mntFile = new File(PropertiesParserSingleton.getInstance().getPropertyValue("mnt" + DMSXServerProperties.DIR_PATH.getText()));
+        List<MemoryDto> list = new ArrayList<>();
+        list.add(new MemoryDto(
+                "heap",
+                Runtime.getRuntime().totalMemory(),
+                Runtime.getRuntime().freeMemory(),
+                Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()
+        ));
 
-        return List.of(
-                new MemoryDto(
-                        "heap",
-                        Runtime.getRuntime().totalMemory(),
-                        Runtime.getRuntime().freeMemory(),
-                        Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()
-                ),
-                new MemoryDto(
-                        tmpFile.getAbsolutePath(),
-                        tmpFile.getTotalSpace(),
-                        tmpFile.getUsableSpace(),
-                        tmpFile.getTotalSpace() - tmpFile.getUsableSpace()
-                ),
-                new MemoryDto(
-                        emailFile.getAbsolutePath(),
-                        emailFile.getTotalSpace(),
-                        emailFile.getUsableSpace(),
-                        emailFile.getTotalSpace() - emailFile.getUsableSpace()
-                ),
-                new MemoryDto(
-                        mntFile.getAbsolutePath(),
-                        mntFile.getTotalSpace(),
-                        mntFile.getUsableSpace(),
-                        mntFile.getTotalSpace() - mntFile.getUsableSpace()
-                )
-        );
+        PROPERTIES_PARSER.getStorageIds().forEach(storageId -> {
+            var file = new File(PropertiesParserSingleton.getInstance().getPropertyValue(storageId + DMSXServerProperties.DIR_PATH.getText()));
+
+            list.add(new MemoryDto(
+                    file.getAbsolutePath(),
+                    file.getTotalSpace(),
+                    file.getUsableSpace(),
+                    file.getTotalSpace() - file.getUsableSpace()
+            ));
+        });
+
+        return list;
     }
 }

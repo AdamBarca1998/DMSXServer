@@ -24,9 +24,13 @@ final class UploadFileHandler extends ManagementHandler {
             checkState();
 
             var inputStream = exchange.getInputStream();
-
             Path targetPath = params.filePath();
-            Files.write(targetPath, inputStream.readAllBytes(), StandardOpenOption.APPEND);
+
+            if (targetPath.toFile().exists()) {
+                Files.write(targetPath, inputStream.readAllBytes(), StandardOpenOption.APPEND);
+            } else {
+                Files.write(targetPath, inputStream.readAllBytes(), StandardOpenOption.CREATE_NEW);
+            }
 
             RoutingHandlers.okHandler(exchange, Response.OK.getText());
             LOGGER.info("END Upload file at " + params.filePath());
